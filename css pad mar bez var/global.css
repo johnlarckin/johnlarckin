@@ -1,0 +1,117 @@
+@import url(header.css);
+@import url(content.css);
+@import url(questions.css);
+@import url(footer.css);
+
+/* Переменные */
+:root {
+    /* Цвета */
+    --yellow: #FFE609;
+    --green: #B2FF00;
+    --red: #FF0004;
+    --white: rgb(255, 255, 255);
+    --black: #000000;
+    --blackpage: #030303;
+    --purple: #510060;
+    --grey: rgba(255, 255, 255, 0.05);
+    --silver: rgba(255, 255, 255, 0.3);
+
+    /* Шрифты */
+    --primary: 'TT Runs Trial';
+    --secondary: 'TT Interphases';
+
+    /* Жирность */
+    --bold: 700;
+    --medium: 600;
+    --regular: 400;
+
+    /* Границы и переходы */
+    --border: rgba(255, 255, 255, 0.05);
+    --borderblock: 1px solid var(--White-10, rgba(255, 255, 255, 0.1));
+    --fill: 100%;
+    --center: center;
+    --flex-end: flex-end;
+    --flex-start: flex-start;
+    --animate: all 0.3s ease;
+    --opacity__25: opacity(0.25);
+    --opacity__50: opacity(0.5);
+    --opacity__75: opacity(0.75);
+    --opacity__100: opacity(1);
+    --blur: blur(7.5px);
+
+    /* Padding */
+    --pdt8: 8rem;
+    --pdb6: 6rem;
+    --pd1_25: 1.25rem;
+}
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+    :root {
+        --zr: 0.25rem; 
+        --xs: 0.5rem;   
+        --sm: 0.75rem; 
+        --md: 0.9rem;   
+        --lg: 1.1rem;  
+        --xl: 1.25rem;    
+        --xxl: 1.5rem; 
+        --hg: 2rem;   
+    }
+}
+
+/* Планшеты (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    :root {
+        --zr: 0.25rem; 
+        --xs: 0.5rem;  
+        --sm: 0.75rem; 
+        --md: 1rem;    
+        --lg: 1.5rem;  
+        --xl: 1.7rem;    
+        --xxl: 2.2rem; 
+        --hg: 3rem;   
+    }
+}
+
+/* Маленькие десктопы (769px–992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    :root {
+        --zr: 0.25rem; 
+        --xs: 0.5rem;  
+        --sm: 0.75rem; 
+        --md: 1rem;    
+        --lg: 1.5rem;  
+        --xl: 1.7rem;    
+        --xxl: 2.2rem; 
+        --hg: 3rem;   
+    }
+}
+
+/* Средние десктопы (993px–1336px) */
+@media (min-width: 993px) {
+    :root {
+        --zr: 0.25rem; 
+        --xs: 0.5rem;  
+        --sm: 0.75rem; 
+        --md: 0.9rem;    
+        --lg: 1rem;  
+        --xl: 1.5rem;    
+        --xxl: 2rem; 
+        --hg: 3rem;   
+    }
+}
+
+/* Большие десктопы (1400px+) */
+@media (min-width: 1600px) {
+    :root {
+        --zr: 0.25rem; 
+        --xs: 0.5rem;  
+        --sm: 0.75rem; 
+        --md: 1rem;    
+        --lg: 1.5rem;  
+        --xl: 1.7rem;    
+        --xxl: 2rem; 
+        --hg: 3rem;   
+        --max: 4rem;   
+    }
+}

@@ -1,0 +1,89 @@
+.content {
+  padding-bottom: var(--hg); /* 48px / 16 */
+}
+
+.content__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 39rem; /* 624px / 16 */
+  padding: 6.75rem 8rem; /* 108px / 16 = 6.75rem, 128px / 16 = 8rem */
+  margin-bottom: var(--hg); /* 48px / 16 */
+  border: var(--borderblock);
+  font-weight: var(--regular);
+  font-size: var(--hg);            /* 48px/16 */
+  line-height: var(--hg);         /* 48px/16 */
+  letter-spacing: 0rem;
+  vertical-align: middle;
+  color: var(--silver);
+}
+
+h1, h2 {
+  font-weight: var(--bold);
+  font-size: var(--hg);         /* 48px/16 */
+  line-height: var(--hg);      /* 48px/16 */
+  letter-spacing: 0rem;
+  vertical-align: middle;
+  margin-bottom: var(--lg); /* 24px / 16 */
+  color: var(--white);
+}
+
+.content__center {
+  width: 100%;
+  text-align: center;
+}
+.content__center h1, .content__center h2 {
+  margin-bottom: var(--xs); /* 8px / 16 */
+}
+
+.content__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: var(--hg); /* 48px / 16 */
+}
+
+.content__wrap {
+  max-width: 53rem; /* 848px / 16 */
+  width: 100%;
+}
+
+.content__bottom {
+  display: -ms-grid;
+  display: grid;
+  /* Converted gap value in grid-template-columns */
+  -ms-grid-columns: 1fr var(--md) 1fr var(--md) 1fr var(--md) 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: var(--md); /* 16px / 16 */
+}
+
+.content__block {
+  min-height: 26rem; /* 416px / 16 */
+  border: var(--borderblock);
+  padding: var(--hg); /* 48px / 16 */
+  font-weight: var(--medium);
+  font-size: var(--lg);         /* 24px/16 */
+  line-height: var(--xxl);     /* 30px/16 */
+  letter-spacing: 0rem;
+  vertical-align: middle;
+  color: var(--silver);
+}
+
+h5 {
+  font-weight: var(--medium);
+  font-size: var(--xxl);           /* 32px/16 */
+  line-height: var(--xxl);         /* 32px/16 */
+  letter-spacing: 0rem;
+  vertical-align: middle;
+  color: var(--white);
+  margin-bottom: var(--lg); /* 24px / 16 */
+}

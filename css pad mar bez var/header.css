@@ -1,0 +1,136 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Keep px here as they define the absolute min/max for the root font size */
+html {
+  font-size: clamp(11px, 1.5vw + 8px, 18px);
+}
+
+@font-face {
+  font-family: "TT Interphases";
+  src: url("../fonts/tt-interphases-pro/TT Interphases Pro Trial Light.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Interphases";
+  src: url("../fonts/tt-interphases-pro/TT Interphases Pro Trial Medium.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Interphases";
+  src: url("../fonts/tt-interphases-pro/TT Interphases Pro Trial DemiBold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  background: var(--blackpage);
+  font-family: var(--secondary);
+}
+
+:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 107rem; /* 1712px / 16 */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 8rem 0 6rem 0; /* 128px / 16 = 8rem, 96px / 16 = 6rem */
+}
+.pt8 {
+  padding-top: var(--pdt8);
+}
+.pb6 {
+  padding-bottom: var(--pdb6);
+}
+
+.header__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  min-width: 19.625rem; /* 314px / 16 */
+  width: 19.625rem;     /* 314px / 16 */
+  min-height: 8rem;     /* 128px / 16 */
+  height: 8rem;         /* 128px / 16 */
+  background: url(../img/logo.svg) no-repeat center/cover;
+}
+
+.header__navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: var(--medium);
+  font-size: var(--lg);
+  line-height: 1.875rem;
+  letter-spacing: 0rem;
+  margin-left: 7.375rem; /* 118px / 16 */
+}
+.header__navbar li {
+  margin-right: 3rem; /* 48px / 16 */
+}
+.header__navbar li:last-child {
+  margin-right: 0;
+}
+.header__navbar a {
+  color: var(--silver);
+  transition: all .2s ease;
+}
+.header__navbar a:hover {
+  color: var(--white);
+}
+
+.header__btn {
+  margin-left: auto;
+  padding: var(--pd1_25); /* 20px / 16 */
+  /* Note: 1px borders are often kept as 1px for crispness, but converting as requested */
+  border: 0.0625rem solid var(--White-5, rgba(255, 255, 255, 0.05)); /* 1px / 16 */
+  border-radius: 0.625rem; /* 10px / 16 */
+  background: var(--White-5, rgba(255, 255, 255, 0.05));
+  font-weight: var(--bold);
+  font-size: var(--lg);;
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
+  color: var(--white);
+}
