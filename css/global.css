@@ -200,3 +200,15 @@
         margin-bottom: var(--max);
     }
 }
+.o-title_line {
+    opacity: 0;
+    transform: translateY(100%) rotateX(-80deg);
+    transform-origin: center top;
+    transform-style: preserve-3d;
+    transition: opacity .8s cubic-bezier(.215,.61,.355,1), transform .8s cubic-bezier(.215,.61,.355,1);
+}
+.o-title_line.is-inview {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.05s;
+}
