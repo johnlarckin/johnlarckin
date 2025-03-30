@@ -54,7 +54,7 @@
         --md: 0.9rem;   
         --lg: 1.1rem;  
         --xl: 1.25rem;    
-        --xxl: 1.5rem; 
+        --xxl: 1.2rem; 
         --hg: 2rem;   
         --max: 3rem;  
     }
@@ -119,17 +119,37 @@
 
 /* media */
 @media screen and (max-width: 992px) {
+    .embyheader__box {
+        flex-wrap: wrap;
+    }
+    .embyheader__navbar {
+        min-width: calc(100% + 2rem);
+        margin-top: 0.8rem;
+        margin-left: -1rem;
+        flex-wrap: nowrap;
+        order: 1;
+        overflow-x: scroll;
+        padding: 0 1rem;
+        padding-bottom: 0.8rem;
+    }
+    .embyheader__navbar li {
+        text-wrap: nowrap;
+    }
+    .embyheader__navbar li a {
+        display: block;
+        background: var(--white);
+        color: var(--black);
+        border-radius: 3px;
+        padding: 0.1rem 0.5rem;
+    }
     .container {
         padding: 0 1rem;
     }
     :root {
         --pdt8: 3rem;
-        --pdb6: 2rem;  
+        --pdb6: 1rem;  
     }
-    .header__navbar {
-        display: none;
-    }
-    .header__logo {
+    .embyheader__logo {
         min-width: 8rem;
         width: 8rem;
         min-height: 5rem;
@@ -140,10 +160,11 @@
         padding: 2rem;
     }
     .content__bottom {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     .content__block {
         min-height: 16rem;
+        padding: var(--md);
     }
     .content__icons {
         flex-wrap: wrap;
@@ -158,23 +179,23 @@
     .questions__text {
         margin-bottom: 2rem;
     }
-    .footer__box {
+    .embyfooter__box {
         flex-direction: column;
     }
-    .footer__left {
+    .embyfooter__left {
         max-width: 100%;
         padding: 2rem;
         border: 0;
     }
-    .footer__soc {
+    .embyfooter__soc {
         margin-bottom: 4rem;
     }
-    .footer__wrap {
+    .embyfooter__wrap {
         flex-wrap: wrap;
         width: 100%;
         padding: 0;
     }
-    .footer__block {
+    .embyfooter__block {
         max-width: 100%;
         margin-bottom: var(--max);
     }
