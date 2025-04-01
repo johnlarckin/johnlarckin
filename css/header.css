@@ -113,7 +113,7 @@ ul, ol {
   color: var(--silver);
   transition: all .2s ease;
 }
-.embyheader__navbar a:hover {
+.embyheader__navbar a:hover, .embyheader__navbar a.active {
   color: var(--white);
 }
 
