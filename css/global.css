@@ -43,6 +43,8 @@
     --pdt8: 8rem;
     --pdb6: 6rem;
     --pd1_25: 1.25rem;
+
+    --max: 3rem;  
 }
 
 /* Мобильные (до 576px) */
@@ -51,12 +53,11 @@
         --zr: 0.25rem; 
         --xs: 0.5rem;   
         --sm: 0.75rem; 
-        --md: 0.9rem;   
-        --lg: 1.1rem;  
+        --md: 0.8rem;   
+        --lg: 0.9rem;  
         --xl: 1.25rem;    
         --xxl: 1.2rem; 
         --hg: 2rem;   
-        --max: 3rem;  
     }
 }
 
@@ -218,6 +219,10 @@
     }
     .embyfooter__copy {
         line-height: var(--lg);
+    }
+    .embyheader__navbar a:hover, .embyheader__navbar a.active {
+        background: var(--black);
+        color: var(--white);
     }
 }
 .o-title_line {

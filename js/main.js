@@ -1,3 +1,3 @@
-$(".questions__accordeon .icon").click(function() {
+$(".questions__btn").click(function() {
     $(this).toggleClass("active");
 });
