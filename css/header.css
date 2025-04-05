@@ -129,4 +129,9 @@ ul, ol {
   line-height: 1.5rem;
   letter-spacing: 0rem;
   color: var(--white);
+  transition: all .3s ease;
+}
+.embyheader__btn:hover {
+  background: var(--white);
+  color: var(--black);
 }

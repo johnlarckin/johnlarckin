@@ -94,6 +94,12 @@ h4 {
           justify-content: space-between;
   margin-bottom: 12.9375rem; /* 207px / 16 */
 }
+.embyfooter__soc a {
+  transition: all .3s ease;
+}
+.embyfooter__soc a:hover {
+  transform: scale(1.1);
+}
 
 .embyfooter__copy {
   font-weight: var(--medium);

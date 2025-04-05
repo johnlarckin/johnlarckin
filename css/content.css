@@ -20,6 +20,13 @@
   vertical-align: middle;
   color: var(--silver);
 }
+.content__top p {
+  transition: all .5s ease;
+}
+.content__top:hover p {
+  color: #d1d1d1;
+  opacity: 0.9;
+}
 
 h1, h2 {
   font-weight: var(--bold);
@@ -51,6 +58,12 @@ h1, h2 {
           align-items: center;
   margin-top: var(--hg); /* 48px / 16 */
 }
+.content__icons .icon {
+  transition: all .3s ease;
+}
+.content__icons .icon:hover {
+  transform: scale(1.1);
+}
 
 .content__wrap {
   max-width: 53rem; /* 848px / 16 */
@@ -76,6 +89,13 @@ h1, h2 {
   letter-spacing: 0rem;
   vertical-align: middle;
   color: var(--silver);
+}
+.content__block p {
+  transition: all .5s ease;
+}
+.content__block:hover p {
+  color: #d1d1d1;
+  opacity: 0.9;
 }
 
 h5 {
