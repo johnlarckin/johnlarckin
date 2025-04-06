@@ -156,7 +156,7 @@
         min-height: 5rem;
         height: 5rem;
     }
-    .content__top {
+    .content__wrap, .content__center {
         min-height: 22rem;
         padding: 2rem;
     }
