@@ -63,7 +63,8 @@
     }
 
     .aside--base {
-        display: none;
+        width: 100%;
+        display: flex;
         
     }
     
@@ -89,7 +90,8 @@
     }
 
     .aside--base {
-        display: none;
+        width: 100%;
+        display: flex;
         
     }
     
