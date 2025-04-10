@@ -65,4 +65,13 @@
     backdrop-filter: var(--blur);
     border: 1px solid var(--border);
   }
+
+
+  .btn--blue {
+    background: var(--blue);
+    border: 1px solid var(--border);
+    color: #fff;
+    backdrop-filter: var(--blur);
+    border: 1px solid var(--border);
+  }
   

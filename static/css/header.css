@@ -2,6 +2,12 @@ header {
 
     position: sticky;
     top: 0;
+    justify-content: space-around;
+    height: 100vh;
+    display: flex
+    ;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 

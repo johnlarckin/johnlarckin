@@ -4,7 +4,7 @@
 
 
     border: 1px solid var(--border);
-    height: 480px;
+
     display: flex;
 }
 
@@ -14,7 +14,7 @@
 
 
     border: 1px solid var(--border);
-    height: 480px;
+
     display: flex;
 }
 

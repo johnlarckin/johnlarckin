@@ -17,6 +17,7 @@ html {
   --white: #c9c9c9;
   --black: #000000;
   --purple: #510060;
+  --blue: #0088cc;
   --grey: rgba(255, 255, 255, 0.05);
 
 
@@ -48,6 +49,14 @@ html {
   box-sizing: border-box;
 }
 
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  transition: var(--animate);
+  font-family: var(--secondary);
+  font-size: var(--sm);
+}
 body {
     background: var(--black);
     color: var(--white);
@@ -83,6 +92,15 @@ img {
   object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.github {
+  align-items: center;
+}
+.img--header {
+  object-fit: contain;
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -126,9 +144,19 @@ h1, h2, h3, h4, h5, p {
 }
 
 .copyright {
-  position: fixed;
+
   bottom: var(--lg);
 }
+
+
+small {
+  font-size: var(--xs);
+  color: var(--white);
+  font-family: var(--secondary);
+  font-weight: var(--regular);
+  text-align: justify;
+}
+
 .opc {
 
 }
@@ -157,6 +185,7 @@ h1, h2, h3, h4, h5, p {
 
   header {
     display: none;
+
   }
   footer {
     padding-left: 0.5rem;
