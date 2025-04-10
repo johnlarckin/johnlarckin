@@ -1,0 +1,81 @@
+footer {
+    width: 100%;
+    display: flex;
+	padding: var(--hg);
+}
+
+.aside--footer {
+    width: 30%;
+    display: flex;
+}
+
+.bside--footer {
+    width: 70%;
+    display: flex;
+}
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+
+    footer {
+        flex-direction: column;
+    }
+
+
+    .aside--footer {
+        width: 100%;
+        display: flex;
+    }
+
+    .bside--footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+  
+  }
+  
+  /* Планшеты (577px–768px) */
+  @media (min-width: 577px) and (max-width: 768px) {
+
+    footer {
+        flex-direction: column;
+    }
+
+    .aside--footer {
+        width: 100%;
+        display: flex;
+    }
+
+    .bside--footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+  }
+  
+  /* Маленькие десктопы (769px–992px) */
+  @media (min-width: 769px) and (max-width: 992px) {
+
+
+ 
+  
+  }
+  
+  /* Средние десктопы (993px–1336px) */
+  @media (min-width: 993px) {
+
+
+  
+  }
+  
+  /* Большие десктопы (1400px+) */
+  @media (min-width: 1600px) {
+
+  
+  
+  
+  }
+

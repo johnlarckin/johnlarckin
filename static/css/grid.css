@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 8px;
+}
+
+
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+/* Планшеты (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Маленькие десктопы (769px–992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+
+}
+
+/* Средние десктопы (993px–1336px) */
+@media (min-width: 993px) {
+
+}
+
+/* Большие десктопы (1400px+) */
+@media (min-width: 1600px) {
+
+}

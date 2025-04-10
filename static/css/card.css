@@ -1,0 +1,32 @@
+.card {
+
+	background: var(--grey);
+    color: var(--white);
+
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+
+.case {
+
+
+    color: var(--white);
+	background: var(--grey);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    min-height: 420px;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow: hidden;
+    justify-content: space-between;
+}

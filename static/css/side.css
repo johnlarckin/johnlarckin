@@ -1,0 +1,129 @@
+
+
+.aside {
+    width: 50%;
+    display: flex;
+}
+
+.bside {
+    width: 50%;
+    display: flex;
+}
+
+.aside--card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.bside--card {
+    width: 100%;
+    display: flex;
+}
+
+
+
+.aside--hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.bside--hero {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.aside--base {
+    width: 20%;
+    
+}
+
+.bside--base {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+
+    .aside {
+        width: 100%;
+        display: flex;
+    }
+    
+    .bside {
+        width: 100%;
+        display: flex;
+    }
+
+    .aside--base {
+        display: none;
+        
+    }
+    
+    .bside--base {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+  }
+  
+  /* Планшеты (577px–768px) */
+  @media (min-width: 577px) and (max-width: 768px) {
+    .aside {
+        width: 100%;
+        display: flex;
+    }
+    
+    .bside {
+        width: 100%;
+        display: flex;
+    }
+
+    .aside--base {
+        display: none;
+        
+    }
+    
+    .bside--base {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+  }
+  
+  /* Маленькие десктопы (769px–992px) */
+  @media (min-width: 769px) and (max-width: 992px) {
+    .aside {
+        width: 100%;
+        display: flex;
+    }
+    
+    .bside {
+        width: 100%;
+        display: flex;
+    }
+  
+  }
+  
+  /* Средние десктопы (993px–1336px) */
+  @media (min-width: 993px) {
+
+  
+  
+  
+  }
+  
+  /* Большие десктопы (1400px+) */
+  @media (min-width: 1600px) {
+
+  
+  }

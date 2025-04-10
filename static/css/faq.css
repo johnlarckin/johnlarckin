@@ -1,0 +1,141 @@
+.faq {
+    display: flex;
+    flex-direction: row;
+
+	background: var(--grey);
+    color: var(--white);
+    backdrop-filter: var(--blur);
+    border: 1px solid var(--border);
+}
+
+.aside--faq {
+    width: 50%;
+    display: flex;
+}
+
+.bside--faq {
+    width: 50%;
+    display: flex;
+}
+
+
+
+            /* Минимальные стили для работы аккордеона */
+            .faq-item {
+                /* Можно добавить нижний бордер, если нужно разделение */
+                border-bottom: 1px solid #ffffff0f;
+                 padding: 10px 0; /* Небольшие отступы для каждого элемента */
+                 overflow: hidden; /* Обязательно для анимации max-height */
+            }
+            .faq-item:last-child {
+                border-bottom: none;
+            }
+
+            .faq-question {
+                display: flex; /* Расположить текст и иконку в ряд */
+                justify-content: space-between; /* Разнести текст и иконку по краям */
+                align-items: center; /* Выровнять по центру по вертикали */
+                cursor: pointer; 
+                user-select: none; 
+
+            }
+
+            /* Стилизация иконки */
+            .faq-icon {
+                flex-shrink: 0; /* Запретить иконке сжиматься */
+                margin-left: 15px; /* Отступ слева от текста вопроса */
+                width: 24px;      /* Ширина кружка */
+                height: 24px;     /* Высота кружка */
+                background-color: white; /* Белый фон */
+                border-radius: 50%;   /* Сделать круглым */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;    /* Размер символа +/- */
+                font-weight: bold;
+                color: #555;        /* Цвет символа */
+                border: 1px solid #ddd; /* Тонкая рамка для видимости на светлом фоне */
+                transition: transform 0.3s ease; /* Плавный поворот (опционально) */
+            }
+
+
+            .faq-answer {
+                max-height: 0; 
+                overflow: hidden; 
+                transition: max-height 0.4s ease-out, padding-top 0.4s ease-out; 
+                padding-top: 0; 
+                box-sizing: border-box;
+            }
+       
+            .faq-answer .subtitle {
+                 padding-top: 16px; 
+            }
+
+
+             .faq-item.active .faq-answer {
+
+             }
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+
+    .faq {
+        flex-direction: column;
+    }
+
+    .aside--faq {
+        width: 100%;
+        display: flex;
+    }
+    
+    .bside--faq {
+        width: 100%;
+        display: flex;
+    }
+    
+    
+
+
+}
+
+/* Планшеты (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .faq {
+        flex-direction: column;
+    }
+
+    .aside--faq {
+        width: 100%;
+        display: flex;
+    }
+    
+    .bside--faq {
+        width: 100%;
+        display: flex;
+    }
+
+}
+
+/* Маленькие десктопы (769px–992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+
+
+}
+
+/* Средние десктопы (993px–1336px) */
+@media (min-width: 993px) {
+
+
+
+
+}
+
+/* Большие десктопы (1400px+) */
+@media (min-width: 1600px) {
+
+
+}
+
+
+

@@ -1,0 +1,61 @@
+.hero {
+
+	background: var(--grey);
+
+
+    border: 1px solid var(--border);
+    height: 480px;
+    display: flex;
+}
+
+.hero--case {
+
+	background: var(--black);
+
+
+    border: 1px solid var(--border);
+    height: 480px;
+    display: flex;
+}
+
+
+
+/* Мобильные (до 576px) */
+@media (max-width: 576px) {
+
+    .hero {
+        flex-direction: column;
+    }
+    
+
+
+}
+
+/* Планшеты (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+}
+
+/* Маленькие десктопы (769px–992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+
+
+}
+
+/* Средние десктопы (993px–1336px) */
+@media (min-width: 993px) {
+
+
+
+
+}
+
+/* Большие десктопы (1400px+) */
+@media (min-width: 1600px) {
+
+
+}

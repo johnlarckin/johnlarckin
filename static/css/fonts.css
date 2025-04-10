@@ -1,0 +1,19 @@
+.title {
+    font-family: var(--primary);
+    font-weight: var(--medium);
+    word-break: break-word;
+}
+
+.subtitle {
+    font-family: var(--secondary);
+    filter: opacity(0.5);
+    font-weight: var(--regular);
+    word-break: break-word;
+}
+
+
+.underline {
+    text-decoration: underline;
+    font-family: var(--primary);
+    font-weight: var(--bold);
+}
