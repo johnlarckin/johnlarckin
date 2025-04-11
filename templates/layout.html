@@ -5,27 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:type" content="website"> 
-    <meta property="og:site_name" content="Продуктовый дизайнер John Larckin"> 
-    <meta property="og:title" content="Эффективная Дизайн Коммуникация | Говорю на языке клиента"> 
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Продуктовый дизайнер John Larckin">
+    <meta property="og:title" content="Эффективная Дизайн Коммуникация | Говорю на языке клиента">
     <meta property="og:description" content="Понимаю задачи с первого брифа, минимум правок, максимум результата. Дизайн SaaS, мобильных приложений, IoT и периферийных систем.">
 
     <meta property="og:image" content="https://hi.johnlarckin.com/static/img/preview.png">
-    <meta property="og:image:width" content="1200"> 
-    <meta property="og:image:height" content="630"> 
-
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <meta property="og:url" content="https://hi.johnlarckin.com/">
 
-
-    <meta name="twitter:card" content="summary_large_image"> 
-
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Эффективная Дизайн Коммуникация | Говорю на языке клиента">
     <meta name="twitter:description" content="Понимаю задачи с первого брифа, минимум правок, максимум результата. Дизайн SaaS, мобильных приложений, IoT и периферийных систем.">
     <meta name="twitter:image" content="https://hi.johnlarckin.com/static/img/preview.png">
-
-
-
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/grid.css') }}">
@@ -37,33 +31,57 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}">
+
     <title data-i18n="page_title">Продуктовый дизайнер John Larckin</title>
 
-
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
-    ym(100975624, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
-    });
- </script>
- <noscript><div><img src="https://mc.yandex.ru/watch/100975624" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
- <!-- /Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(100975624, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true,
+             webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/100975624" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <style>
+        /* Smooth Scrolling для навигации по якорным ссылкам (#) */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation Base Styles - применяется к КАЖДОМУ анимируемому элементу */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px); /* Start slightly lower */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform; /* Performance hint */
+        }
+
+        /* Animation Visible State */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Класс-триггер для родительских блоков, чьи дочерние элементы нужно анимировать */
+        .animation-trigger {
+           /* Можно добавить стили, если нужно, но в основном используется как маркер для JS */
+        }
+    </style>
 
 </head>
 
 <body>
-
 
     <section class="base">
 
@@ -71,27 +89,65 @@
             {% include 'header.html' %}
         </section>
 
-
-
         <section class="bside--base gp gp--xs">
             {% block main %}
             {% endblock %}
 
-            <section class="faq pd pd__hg gp gp--xxl" id="faq">
-                {% include 'faq.html' %}
+            <!-- FAQ и Footer теперь тоже триггеры для своих внутренних элементов (если они есть) -->
+            <section class="faq pd pd__hg gp gp--xxl animation-trigger" id="faq">
+                {% include 'faq.html' %} <!-- Элементы внутри faq.html нужно будет пометить классом animate-on-scroll -->
             </section>
 
-            <footer class="gp gp--xxl">
-            {% include 'footer.html' %}
+            <footer class="gp gp--xxl animation-trigger">
+                {% include 'footer.html' %} <!-- Элементы внутри footer.html нужно будет пометить классом animate-on-scroll -->
             </footer>
 
         </section>
 
-
-
-
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Находим все РОДИТЕЛЬСКИЕ блоки-триггеры
+            const animationTriggers = document.querySelectorAll('.animation-trigger');
+            const staggerDelay = 100; // Задержка между анимациями дочерних элементов в мс
+
+            if (!animationTriggers.length) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Триггер сработает, когда 10% блока-триггера видно
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const triggerElement = entry.target;
+                        // Находим ВСЕ анимируемые элементы ВНУТРИ сработавшего триггера
+                        const elementsToAnimate = triggerElement.querySelectorAll('.animate-on-scroll');
+
+                        elementsToAnimate.forEach((el, index) => {
+                            // Добавляем класс is-visible с задержкой
+                            setTimeout(() => {
+                                el.classList.add('is-visible');
+                            }, index * staggerDelay); // Увеличиваем задержку для каждого следующего элемента
+                        });
+
+                        // Отписываемся от наблюдения за этим триггером, чтобы анимация сработала один раз
+                        observer.unobserve(triggerElement);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Наблюдаем за каждым блоком-триггером
+            animationTriggers.forEach(trigger => {
+                observer.observe(trigger);
+            });
+        });
+    </script>
 
 </body>
 </html>
