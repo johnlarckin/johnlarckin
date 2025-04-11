@@ -55,94 +55,62 @@
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-stopping iframe { pointer-events: none; }
 
-        /* Анимация появления ДЛЯ ТЕКСТА И ССЫЛОК */
-        .animate-on-scroll {
-            opacity: 0; /* Начинаем полупрозрачным */
-            color: var(--white); /* Начальный цвет */
-            transform: translateY(40px); /* Начинаем ниже */
-             /* Анимируем прозрачность, цвет и позицию */
-            transition: opacity 1s ease-out, transform 1s ease-out, color 1s ease-out;
-            will-change: opacity, transform, color;
+        /* --- Стили для ПОСЛЕДОВАТЕЛЬНОЙ анимации КАЖДОГО элемента --- */
+        .animate-sequential-item {
+            opacity: 0; /* Начинаем невидимым */
+            transform: translateY(30px); /* Начинаем ниже */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Плавный переход */
+            will-change: opacity, transform;
         }
-        .animate-on-scroll.is-visible {
-            opacity: 1; /* Становится непрозрачным */
-            color: var(--green); /* Становится белым */
+        .animate-sequential-item.is-visible {
+            opacity: 1; /* Становится видимым */
             transform: translateY(0); /* Возвращается на место */
         }
+        /* --- Конец стилей анимации --- */
 
-        .animate-on-scroll-header {
-            opacity: 0.5; /* Начинаем полупрозрачным */
-            color: var(--white); /* Начальный цвет */
-            transform: translateY(40px); /* Начинаем ниже */
-             /* Анимируем прозрачность, цвет и позицию */
-            transition: opacity 1s ease-out, transform 1s ease-out, color 1s ease-out;
-            will-change: opacity, transform, color;
+        /* Стиль для активной ссылки в меню */
+        header.web nav a.link.active {
+            opacity: 1 !important;
+            color: var(--green) !important;
         }
-        .animate-on-scroll-header.is-visible {
-            opacity: 1; /* Становится непрозрачным */
-            color: var(--green); /* Становится белым */
-            transform: translateY(0); /* Возвращается на место */
+        header.web nav a.link.active .nav-link-bar {
+            height: 1em;
         }
-
-        /* Отдельно переопределяем стиль для активной ссылки в меню,
-           чтобы она сразу была белой и непрозрачной */
-        header.web .link.active.animate-on-scroll.is-visible,
-        header.web .link.active { /* Также стиль для случая, если is-visible еще не добавился */
-             opacity: 1 !important;
-             color: var(--green) !important;
-        }
-
-        /* Убираем изменение цвета для иконок при анимации (если нужно) */
-        .icon.animate-on-scroll,
-        .icon.animate-on-scroll.is-visible {
-            color: inherit; /* Не менять цвет иконки */
-        }
-         /* --- Конец стилей анимации --- */
-
-
-        .animation-trigger {}
+        /* Стили палочки */
+        header.web nav a.link { display: flex; align-items: center; position: relative; transition: opacity 0.3s ease, color 0.3s ease; }
+        .nav-link-bar { display: inline-block; width: 2px; height: 0; background-color: var(--green); margin-right: 8px; transition: height 0.4s ease-out; will-change: height; }
+        header.web nav a.link:hover .nav-link-bar { height: 1em; }
+        header.web nav a.link:hover { opacity: 1; color: var(--green); }
+        header.web nav a.link.opc:not(.opc--50) { opacity: 1; }
+        .nav-link-text { display: inline-block; }
 
         /* Стили для переключателя языков */
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .language-switcher a {
-            text-decoration: none;
-            padding: 5px 8px;
-            color: #ccc;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: var(--xs);
-            transition: color 0.2s ease;
-        }
-        .language-switcher a:hover {
-             color: #fff;
-        }
-        .language-switcher a.active {
-            color: #FFFFFF;
-            pointer-events: none;
-            cursor: default;
-        }
+        .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); padding: 5px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .language-switcher a { text-decoration: none; padding: 5px 8px; color: #ccc; font-weight: bold; text-transform: uppercase; font-size: var(--xs); transition: color 0.2s ease; }
+        .language-switcher a:hover { color: #fff; }
+        .language-switcher a.active { color: #FFFFFF; pointer-events: none; cursor: default; }
     </style>
 
 </head>
 
 <body>
 
-
+    <div class="language-switcher">
+        {% for lang in supported_langs %}
+            {% set view_args = request.view_args.copy() %}
+            {% set _ = view_args.update({'lang_code': lang}) %}
+            <a href="{{ url_for(request.endpoint, **view_args) }}"
+               class="{{ 'active' if lang == current_lang else '' }}">
+                {{ lang }}
+            </a>
+        {% endfor %}
+    </div>
 
 
     <section class="base">
 
         <section class="aside--base">
+             <!-- Хедер НЕ ДОЛЖЕН БЫТЬ sequential-container, если он виден сразу -->
             {% include 'header.html' %}
         </section>
 
@@ -150,11 +118,13 @@
             {% block main %}
             {% endblock %}
 
-            <section class="faq pd pd__hg gp gp--xxl animation-trigger" id="faq">
+             <!-- ЭТОТ блок - контейнер-триггер для FAQ -->
+            <section class="faq pd pd__hg gp gp--xxl sequential-container" id="faq">
                 {% include 'faq.html' %}
             </section>
 
-            <footer class="gp gp--xxl animation-trigger">
+             <!-- ЭТОТ блок - контейнер-триггер для Footer -->
+            <footer class="gp gp--xxl sequential-container">
                 {% include 'footer.html' %}
             </footer>
 
@@ -164,69 +134,66 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
     <script>
-        let lenis; // Объявляем глобально
+        let lenis;
         if (typeof Lenis !== 'undefined') {
              lenis = new Lenis();
-             function raf(time) {
-               lenis.raf(time)
-               requestAnimationFrame(raf)
-             }
+             function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
              requestAnimationFrame(raf);
         } else {
              console.error("Lenis library not loaded.");
         }
 
-        function initAnimationObserver() {
-            const animationTriggers = document.querySelectorAll('.animation-trigger');
-            const staggerDelay = 100;
+        // --- Последовательная анимация элементов ВНУТРИ контейнера ---
+        function initSequentialAnimation() {
+            const containers = document.querySelectorAll('.sequential-container'); // Ищем триггеры
+            const itemStaggerDelay = 80; // мс задержка между элементами
 
-            if (!animationTriggers.length) return;
+            if (!containers.length) return;
 
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1
+                threshold: 0.1 // Запускаем когда 10% контейнера видно
             };
 
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const triggerElement = entry.target;
-                        const elementsToAnimate = triggerElement.querySelectorAll('.animate-on-scroll');
+                        const containerElement = entry.target;
+                        // Ищем элементы для анимации ВНУТРИ сработавшего триггера
+                        const itemsToAnimate = containerElement.querySelectorAll('.animate-sequential-item');
 
-                        elementsToAnimate.forEach((el, index) => {
-                            // Добавляем небольшую задержку перед первой анимацией в блоке
-                            const delay = index * staggerDelay + 50; // +50ms общей задержки
-                            setTimeout(() => {
-                                el.classList.add('is-visible');
-                            }, delay);
-                        });
-                        observer.unobserve(triggerElement);
+                        if (itemsToAnimate.length > 0) {
+                            itemsToAnimate.forEach((item, index) => {
+                                const delay = index * itemStaggerDelay;
+                                setTimeout(() => {
+                                    item.classList.add('is-visible');
+                                }, delay);
+                            });
+                        }
+                        observer.unobserve(containerElement); // Отписываемся после первого срабатывания
                     }
                 });
             };
 
             const observer = new IntersectionObserver(observerCallback, observerOptions);
-            animationTriggers.forEach(trigger => observer.observe(trigger));
+            containers.forEach(container => observer.observe(container));
         }
 
+        // --- Навигация ---
         function initNavigation() {
-             // 1. Smooth Scroll по якорям
+             // 1. Smooth Scroll
              document.querySelectorAll('header.web a[href^="#"]').forEach(anchor => {
                  anchor.addEventListener('click', function (e) {
                      e.preventDefault();
                      const targetId = this.getAttribute('href');
-                     // Проверяем, что это действительно якорь (#...), а не просто #
                      if (targetId && targetId.length > 1) {
                          const targetElement = document.querySelector(targetId);
                          if (targetElement && typeof lenis !== 'undefined') {
-                             lenis.scrollTo(targetElement, { duration: 1.2 }); // Немного медленнее скролл
+                             lenis.scrollTo(targetElement, { duration: 1.2 });
                          } else if (targetElement) {
                              targetElement.scrollIntoView({ behavior: 'smooth' });
-                             console.warn("Lenis not found, using native scrollIntoView.");
                          } else {
                              console.warn("Target element not found for anchor:", targetId);
                          }
@@ -234,83 +201,75 @@
                  });
              });
 
-            // 2. Подсветка активной ссылки
-            // Выбираем ТОЛЬКО навигационные ссылки в десктопном хедере
-            const navLinks = document.querySelectorAll('header.web .col.gp--xs > a.link[href^="#"]');
-            // Выбираем все секции с ID внутри main и footer (если #faq в footer)
-            const sections = document.querySelectorAll('main section[id], footer section[id], section.faq[id]');
+            // 2. Active Nav Link Highlighting
+            const navLinks = document.querySelectorAll('header.web nav a.link[href^="#"]');
+            // Ищем секции во всем документе, а не только в main/footer
+            const sections = document.querySelectorAll('section[id]');
             const sectionMap = new Map();
 
-             if (!navLinks.length || !sections.length) {
-                 console.warn("Nav links or sections not found for active highlighting.");
-                 return; // Выходим, если нечего подсвечивать
-             }
+             if (!navLinks.length || !sections.length) return;
 
              sections.forEach(section => {
-                 const correspondingLink = document.querySelector(`header.web a.link[href="#${section.id}"]`);
-                 if (correspondingLink) {
-                     sectionMap.set(section, correspondingLink);
+                 // Убедимся, что ID секции не пустой
+                 if (section.id) {
+                    const correspondingLink = document.querySelector(`header.web a.link[href="#${section.id}"]`);
+                    if (correspondingLink) {
+                        sectionMap.set(section, correspondingLink);
+                    }
                  }
              });
+             // Проверяем, что хоть что-то добавилось в Map
+             if (sectionMap.size === 0) {
+                console.warn("No sections with corresponding nav links found for highlighting.");
+                return;
+             }
 
             const observerOptions = {
                 root: null,
-                rootMargin: '-40% 0px -60% 0px', // Начинаем активацию чуть выше центра
-                threshold: 0 // Любое пересечение с зоной
+                rootMargin: '-40% 0px -60% 0px',
+                threshold: 0
             };
 
              const activateLink = (linkToActivate) => {
-                 navLinks.forEach(link => {
-                     // Убираем active со всех ссылок
-                     link.classList.remove('active');
-                 });
+                 navLinks.forEach(link => link.classList.remove('active'));
                  if (linkToActivate) {
-                     // Добавляем active к нужной ссылке
                      linkToActivate.classList.add('active');
                  }
              };
 
             const observerCallback = (entries) => {
                 let activeSectionFound = false;
-                 // Перебираем видимые секции В ОБРАТНОМ ПОРЯДКЕ, чтобы найти самую нижнюю видимую
                  entries.reverse().forEach(entry => {
                      if (!activeSectionFound && entry.isIntersecting) {
                          const link = sectionMap.get(entry.target);
                          if (link) {
                              activateLink(link);
-                             activeSectionFound = true; // Активировали, дальше не ищем
+                             activeSectionFound = true;
                          }
                      }
                  });
-
-                 // Если ни одна секция не активна (например, в самом верху/низу), убираем подсветку
                  if (!activeSectionFound) {
+                    // Если ни одна секция не активна в данный момент,
+                    // попробуем найти последнюю секцию, которая была пересечена сверху
+                    // (Это более сложная логика, пока оставим просто сброс)
                     activateLink(null);
                  }
             };
 
             const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-
-            // Важно: наблюдаем именно за секциями, а не ссылками
-            sectionMap.forEach((link, section) => {
-                 scrollObserver.observe(section);
-             });
+            sectionMap.forEach((link, section) => scrollObserver.observe(section));
         }
 
+        // --- Запуск скриптов ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Сначала инициализируем навигацию (важно для корректной работы якорей)
             if (typeof Lenis !== 'undefined') {
                  initNavigation();
             } else {
-                 // Если Lenis не загружен, попробуем инициализировать без него
-                 // (скролл по якорям будет стандартный)
-                 console.warn("Initializing navigation without Lenis.");
+                 console.warn("Initializing navigation without Lenis for anchors.");
                  initNavigation();
             }
-            // Затем запускаем анимации
-            initAnimationObserver();
+            initSequentialAnimation(); // Запускаем последовательную анимацию
         });
     </script>
-
 </body>
 </html>
