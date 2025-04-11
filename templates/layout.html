@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ current_lang }}"> <!-- Динамический язык -->
+<html lang="{{ current_lang }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="{{ _('page_title') }}"> <!-- Перевод -->
-    <meta property="og:title" content="{{ _('og_title') }}"> <!-- Новый ключ для OG -->
-    <meta property="og:description" content="{{ _('og_description') }}"> <!-- Новый ключ для OG -->
+    <meta property="og:site_name" content="{{ _('page_title') }}">
+    <meta property="og:title" content="{{ _('og_title') }}">
+    <meta property="og:description" content="{{ _('og_description') }}">
     <meta property="og:image" content="https://hi.johnlarckin.com/static/img/preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="{{ request.url_root }}{{ current_lang }}/"> <!-- Динамический URL -->
+    <meta property="og:url" content="{{ request.url_root }}{{ current_lang }}/">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ _('twitter_title') }}"> <!-- Новый ключ -->
-    <meta name="twitter:description" content="{{ _('twitter_description') }}"> <!-- Новый ключ -->
+    <meta name="twitter:title" content="{{ _('twitter_title') }}">
+    <meta name="twitter:description" content="{{ _('twitter_description') }}">
     <meta name="twitter:image" content="https://hi.johnlarckin.com/static/img/preview.png">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}">
 
-    <title>{{ _('page_title') }}</title> <!-- Динамический title -->
+    <title>{{ _('page_title') }}</title>
 
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -45,7 +45,7 @@
              trackLinks:true,
              accurateTrackBounce:true,
              webvisor:true,
-             defer: true // Небольшое улучшение - отложить инициализацию
+             defer: true
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/100975624" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
@@ -55,74 +55,94 @@
         .lenis.lenis-smooth { scroll-behavior: auto !important; }
         .lenis.lenis-stopping iframe { pointer-events: none; }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        /* Анимация появления ДЛЯ ТЕКСТА И ССЫЛОК */
         .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            will-change: opacity, transform;
+            opacity: 0; /* Начинаем полупрозрачным */
+            color: var(--white); /* Начальный цвет */
+            transform: translateY(40px); /* Начинаем ниже */
+             /* Анимируем прозрачность, цвет и позицию */
+            transition: opacity 1s ease-out, transform 1s ease-out, color 1s ease-out;
+            will-change: opacity, transform, color;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1; /* Становится непрозрачным */
+            color: var(--green); /* Становится белым */
+            transform: translateY(0); /* Возвращается на место */
         }
 
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .animate-on-scroll-header {
+            opacity: 0.5; /* Начинаем полупрозрачным */
+            color: var(--white); /* Начальный цвет */
+            transform: translateY(40px); /* Начинаем ниже */
+             /* Анимируем прозрачность, цвет и позицию */
+            transition: opacity 1s ease-out, transform 1s ease-out, color 1s ease-out;
+            will-change: opacity, transform, color;
         }
+        .animate-on-scroll-header.is-visible {
+            opacity: 1; /* Становится непрозрачным */
+            color: var(--green); /* Становится белым */
+            transform: translateY(0); /* Возвращается на место */
+        }
+
+        /* Отдельно переопределяем стиль для активной ссылки в меню,
+           чтобы она сразу была белой и непрозрачной */
+        header.web .link.active.animate-on-scroll.is-visible,
+        header.web .link.active { /* Также стиль для случая, если is-visible еще не добавился */
+             opacity: 1 !important;
+             color: var(--green) !important;
+        }
+
+        /* Убираем изменение цвета для иконок при анимации (если нужно) */
+        .icon.animate-on-scroll,
+        .icon.animate-on-scroll.is-visible {
+            color: inherit; /* Не менять цвет иконки */
+        }
+         /* --- Конец стилей анимации --- */
+
 
         .animation-trigger {}
 
-        /* Стили для переключателя языков (пример) */
+        /* Стили для переключателя языков */
         .language-switcher {
-            position: fixed; /* Или другое позиционирование */
+            position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
             padding: 5px;
             border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .language-switcher a {
             text-decoration: none;
             padding: 5px 8px;
-            color: #333;
+            color: #ccc;
             font-weight: bold;
             text-transform: uppercase;
+            font-size: var(--xs);
+            transition: color 0.2s ease;
+        }
+        .language-switcher a:hover {
+             color: #fff;
         }
         .language-switcher a.active {
-            color: #007bff; /* Или ваш активный цвет */
-            pointer-events: none; /* Нельзя кликнуть на активный язык */
+            color: #FFFFFF;
+            pointer-events: none;
             cursor: default;
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <!-- Пример переключателя языков -->
-    <div class="language-switcher">
-        {% for lang in supported_langs %}
-            {# Создаем копию request.view_args, чтобы не изменять оригинал #}
-            {% set view_args = request.view_args.copy() %}
-            {# Обновляем или добавляем lang_code в копии словаря #}
-            {% set _ = view_args.update({'lang_code': lang}) %}
-            {# Используем обновленный словарь view_args для генерации URL #}
-            <a href="{{ url_for(request.endpoint, **view_args) }}"
-               class="{{ 'active' if lang == current_lang else '' }}">
-                {{ lang }}
-            </a>
-        {% endfor %}
-    </div>
-    <!-- Конец примера -->
+
 
 
     <section class="base">
 
         <section class="aside--base">
-             <!-- Передаем язык в header, если там тоже есть переводы -->
             {% include 'header.html' %}
         </section>
 
@@ -130,12 +150,10 @@
             {% block main %}
             {% endblock %}
 
-             <!-- Передаем язык в faq, если там тоже есть переводы -->
             <section class="faq pd pd__hg gp gp--xxl animation-trigger" id="faq">
                 {% include 'faq.html' %}
             </section>
 
-             <!-- Передаем язык в footer, т.к. там точно есть переводы -->
             <footer class="gp gp--xxl animation-trigger">
                 {% include 'footer.html' %}
             </footer>
@@ -146,19 +164,24 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-    <script>
-        // --- Lenis Smooth Scroll ---
-        const lenis = new Lenis()
-        function raf(time) {
-          lenis.raf(time)
-          requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-        // --- Intersection Observer for Animations ---
-        document.addEventListener('DOMContentLoaded', () => {
+    <script>
+        let lenis; // Объявляем глобально
+        if (typeof Lenis !== 'undefined') {
+             lenis = new Lenis();
+             function raf(time) {
+               lenis.raf(time)
+               requestAnimationFrame(raf)
+             }
+             requestAnimationFrame(raf);
+        } else {
+             console.error("Lenis library not loaded.");
+        }
+
+        function initAnimationObserver() {
             const animationTriggers = document.querySelectorAll('.animation-trigger');
-            const staggerDelay = 100; // мс
+            const staggerDelay = 100;
 
             if (!animationTriggers.length) return;
 
@@ -175,21 +198,117 @@
                         const elementsToAnimate = triggerElement.querySelectorAll('.animate-on-scroll');
 
                         elementsToAnimate.forEach((el, index) => {
+                            // Добавляем небольшую задержку перед первой анимацией в блоке
+                            const delay = index * staggerDelay + 50; // +50ms общей задержки
                             setTimeout(() => {
                                 el.classList.add('is-visible');
-                            }, index * staggerDelay);
+                            }, delay);
                         });
-
                         observer.unobserve(triggerElement);
                     }
                 });
             };
 
             const observer = new IntersectionObserver(observerCallback, observerOptions);
+            animationTriggers.forEach(trigger => observer.observe(trigger));
+        }
 
-            animationTriggers.forEach(trigger => {
-                observer.observe(trigger);
-            });
+        function initNavigation() {
+             // 1. Smooth Scroll по якорям
+             document.querySelectorAll('header.web a[href^="#"]').forEach(anchor => {
+                 anchor.addEventListener('click', function (e) {
+                     e.preventDefault();
+                     const targetId = this.getAttribute('href');
+                     // Проверяем, что это действительно якорь (#...), а не просто #
+                     if (targetId && targetId.length > 1) {
+                         const targetElement = document.querySelector(targetId);
+                         if (targetElement && typeof lenis !== 'undefined') {
+                             lenis.scrollTo(targetElement, { duration: 1.2 }); // Немного медленнее скролл
+                         } else if (targetElement) {
+                             targetElement.scrollIntoView({ behavior: 'smooth' });
+                             console.warn("Lenis not found, using native scrollIntoView.");
+                         } else {
+                             console.warn("Target element not found for anchor:", targetId);
+                         }
+                     }
+                 });
+             });
+
+            // 2. Подсветка активной ссылки
+            // Выбираем ТОЛЬКО навигационные ссылки в десктопном хедере
+            const navLinks = document.querySelectorAll('header.web .col.gp--xs > a.link[href^="#"]');
+            // Выбираем все секции с ID внутри main и footer (если #faq в footer)
+            const sections = document.querySelectorAll('main section[id], footer section[id], section.faq[id]');
+            const sectionMap = new Map();
+
+             if (!navLinks.length || !sections.length) {
+                 console.warn("Nav links or sections not found for active highlighting.");
+                 return; // Выходим, если нечего подсвечивать
+             }
+
+             sections.forEach(section => {
+                 const correspondingLink = document.querySelector(`header.web a.link[href="#${section.id}"]`);
+                 if (correspondingLink) {
+                     sectionMap.set(section, correspondingLink);
+                 }
+             });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-40% 0px -60% 0px', // Начинаем активацию чуть выше центра
+                threshold: 0 // Любое пересечение с зоной
+            };
+
+             const activateLink = (linkToActivate) => {
+                 navLinks.forEach(link => {
+                     // Убираем active со всех ссылок
+                     link.classList.remove('active');
+                 });
+                 if (linkToActivate) {
+                     // Добавляем active к нужной ссылке
+                     linkToActivate.classList.add('active');
+                 }
+             };
+
+            const observerCallback = (entries) => {
+                let activeSectionFound = false;
+                 // Перебираем видимые секции В ОБРАТНОМ ПОРЯДКЕ, чтобы найти самую нижнюю видимую
+                 entries.reverse().forEach(entry => {
+                     if (!activeSectionFound && entry.isIntersecting) {
+                         const link = sectionMap.get(entry.target);
+                         if (link) {
+                             activateLink(link);
+                             activeSectionFound = true; // Активировали, дальше не ищем
+                         }
+                     }
+                 });
+
+                 // Если ни одна секция не активна (например, в самом верху/низу), убираем подсветку
+                 if (!activeSectionFound) {
+                    activateLink(null);
+                 }
+            };
+
+            const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Важно: наблюдаем именно за секциями, а не ссылками
+            sectionMap.forEach((link, section) => {
+                 scrollObserver.observe(section);
+             });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Сначала инициализируем навигацию (важно для корректной работы якорей)
+            if (typeof Lenis !== 'undefined') {
+                 initNavigation();
+            } else {
+                 // Если Lenis не загружен, попробуем инициализировать без него
+                 // (скролл по якорям будет стандартный)
+                 console.warn("Initializing navigation without Lenis.");
+                 initNavigation();
+            }
+            // Затем запускаем анимации
+            initAnimationObserver();
         });
     </script>
 

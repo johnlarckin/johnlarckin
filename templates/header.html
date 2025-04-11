@@ -3,57 +3,80 @@
 
     <div class="col gp gp--hg">
 
+        <!-- Верхняя часть: Лого и Заголовок -->
         <div class="col gp gp--lg">
             <a class="logo" href="{{ url_for('index', lang_code=current_lang) }}"></a>
             <h1 class="title fs__lg">{{ _('header_title') | safe }}</h1>
         </div>
 
+        <!-- Средняя часть: Навигация и Кнопки -->
         <div class="col gp gp--lg">
-            <div class="col gp gp--xs">
-                <a class="link opc opc--50 anmt" href="#services">{{ _('nav_services') }}</a>
-                <a class="link opc opc--50 anmt" href="#principles">{{ _('nav_principles') }}</a>
-                <a class="link opc anmt" href="#cases">{{ _('nav_cases') | safe }}</a>
-                <a class="link opc opc--50 anmt" href="#design-system">{{ _('nav_design_system') }}</a>
-                <a class="link opc opc--50 anmt" href="#approach">{{ _('nav_approach') }}</a>
-                <a class="link opc opc--50 anmt" href="#development-principles">{{ _('nav_dev_principles') }}</a>
-                <a class="link opc opc--50 anmt" href="#industries">{{ _('nav_industries') }}</a>
-                <a class="link opc opc--50 anmt" href="#expertise">{{ _('nav_expertise') }}</a>
-                <a class="link opc opc--50 anmt" href="#standards">{{ _('nav_documentation') }}</a>
-                <a class="link opc anmt" href="#faq">{{ _('nav_faq') | safe }}</a>
-            </div>
+            <!-- Навигационные ссылки -->
+            <nav class="col gp gp--xs">
+                <a class="link opc opc--50 anmt" href="#services">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_services') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#principles">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_principles') }}</span>
+                </a>
+                <a class="link opc anmt" href="#cases">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_cases') | safe }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#design-system">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_design_system') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#approach">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_approach') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#development-principles">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_dev_principles') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#industries">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_industries') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#expertise">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_expertise') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#standards">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_documentation') }}</span>
+                </a>
+                <a class="link opc anmt" href="#faq">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_faq') | safe }}</span>
+                </a>
+            </nav>
 
+            <!-- Кнопки -->
             <div class="col gp gp--xs">
                 <a href="https://t.me/johnlarckin" class="btn btn--blue">{{ _('header_btn_tg') }}</a>
                 <a href="{{ url_for('static', filename='img/cv_johnlarckin.pdf') }}" class="btn btn--blk" download="cv_johnlarckin.pdf">{{ _('header_btn_cv') }}</a>
             </div>
         </div>
 
-    </div>
-
-    <div class="copyright">
-        <div class="col gp gp--md mg mg__lg--btm">
-            <div class="col gp gp--xs">
-                <span class="title fs__xs fw__md opc opc--75">{{ _('header_copyright') }}</span>
-                <small class="opc opc--25">{{ _('header_disclaimer') }}</small>
-            </div>
-            <div class="col gp gp--xs">
-                <div class="row gp gp--xs github">
-                    <img class="img--header" src="{{ url_for('static', filename='img/soc6.svg') }}" alt="GitHub icon">
-                    <a href="https://github.com/johnlarckin/johnlarckin" class="title fs__xs fw__md opc opc--75">{{ _('header_github_link') }}</a>
+        <!-- Нижняя часть: Копирайт -->
+        <div class="copyright">
+            <div class="col gp gp--md mg mg__lg--btm">
+                <div class="col gp gp--xs">
+                    <span class="title fs__xs fw__md opc opc--75">{{ _('header_copyright') }}</span>
+                    <small class="opc opc--25">{{ _('header_disclaimer') }}</small>
                 </div>
-                <span class="subtitle fs__xs fw__md opc opc--75">{{ _('header_last_updated') }}</span>
+                <div class="col gp gp--xs">
+                    <div class="row gp gp--xs github">
+                        <img class="img--header" src="{{ url_for('static', filename='img/soc6.svg') }}" alt="GitHub icon">
+                        <a href="https://github.com/johnlarckin/johnlarckin" class="title fs__xs fw__md opc opc--75">{{ _('header_github_link') }}</a>
+                    </div>
+                    <span class="subtitle fs__xs fw__md opc opc--75">{{ _('header_last_updated') }}</span>
+                </div>
             </div>
         </div>
-    </div>
+
+    </div> <!-- Конец основного .col.gp--hg -->
 
 </header>
 
 <!-- Mobile Header -->
 <header class="mobile">
-
     <div class="row gp gp--hg center">
         <a class="logo" href="{{ url_for('index', lang_code=current_lang) }}"></a>
         <h1 class="title fs__lg">{{ _('header_title') | safe }}</h1>
     </div>
-
 </header>

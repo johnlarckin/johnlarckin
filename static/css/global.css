@@ -50,6 +50,20 @@ html {
 }
 
 
+/* Добавьте это в ваш global.css или аналогичный файл */
+header.web .link.active {
+  filter: none; /* Убирает filter: opacity(...) */
+  opacity: 1;   /* Явное указание непрозрачности */
+  color: var(--green); /* Делаем активную ссылку белой (или ваш основной цвет) */
+  /* Или можно использовать: color: #FFFFFF; */
+}
+
+/* Важно! Возможно, придется убрать .opc--50 с активных ссылок через JS */
+header.web .link.active.opc--50 {
+    filter: none;
+    opacity: 1;
+}
+
 a {
   text-decoration: none;
   color: var(--white);
@@ -142,7 +156,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .copyright {
-
+  position: absolute;
   bottom: var(--lg);
 }
 
