@@ -61,6 +61,7 @@ body {
     background: var(--black);
     color: var(--white);
     margin: var(--xl);
+    overflow: hidden;
 
 }
 

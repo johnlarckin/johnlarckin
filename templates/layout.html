@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ current_lang }}"> <!-- Динамический язык -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Продуктовый дизайнер John Larckin">
-    <meta property="og:title" content="Эффективная Дизайн Коммуникация | Говорю на языке клиента">
-    <meta property="og:description" content="Понимаю задачи с первого брифа, минимум правок, максимум результата. Дизайн SaaS, мобильных приложений, IoT и периферийных систем.">
-
+    <meta property="og:site_name" content="{{ _('page_title') }}"> <!-- Перевод -->
+    <meta property="og:title" content="{{ _('og_title') }}"> <!-- Новый ключ для OG -->
+    <meta property="og:description" content="{{ _('og_description') }}"> <!-- Новый ключ для OG -->
     <meta property="og:image" content="https://hi.johnlarckin.com/static/img/preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
-    <meta property="og:url" content="https://hi.johnlarckin.com/">
+    <meta property="og:url" content="{{ request.url_root }}{{ current_lang }}/"> <!-- Динамический URL -->
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Эффективная Дизайн Коммуникация | Говорю на языке клиента">
-    <meta name="twitter:description" content="Понимаю задачи с первого брифа, минимум правок, максимум результата. Дизайн SaaS, мобильных приложений, IoT и периферийных систем.">
+    <meta name="twitter:title" content="{{ _('twitter_title') }}"> <!-- Новый ключ -->
+    <meta name="twitter:description" content="{{ _('twitter_description') }}"> <!-- Новый ключ -->
     <meta name="twitter:image" content="https://hi.johnlarckin.com/static/img/preview.png">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
@@ -33,9 +31,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}">
 
-    <title data-i18n="page_title">Продуктовый дизайнер John Larckin</title>
+    <title>{{ _('page_title') }}</title> <!-- Динамический title -->
 
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();
@@ -47,45 +44,85 @@
              clickmap:true,
              trackLinks:true,
              accurateTrackBounce:true,
-             webvisor:true
+             webvisor:true,
+             defer: true // Небольшое улучшение - отложить инициализацию
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/100975624" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
 
     <style>
-        /* Smooth Scrolling для навигации по якорным ссылкам (#) */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopping iframe { pointer-events: none; }
+
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animation Base Styles - применяется к КАЖДОМУ анимируемому элементу */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px); /* Start slightly lower */
+            transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            will-change: opacity, transform; /* Performance hint */
+            will-change: opacity, transform;
         }
 
-        /* Animation Visible State */
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Класс-триггер для родительских блоков, чьи дочерние элементы нужно анимировать */
-        .animation-trigger {
-           /* Можно добавить стили, если нужно, но в основном используется как маркер для JS */
+        .animation-trigger {}
+
+        /* Стили для переключателя языков (пример) */
+        .language-switcher {
+            position: fixed; /* Или другое позиционирование */
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
         }
+        .language-switcher a {
+            text-decoration: none;
+            padding: 5px 8px;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .language-switcher a.active {
+            color: #007bff; /* Или ваш активный цвет */
+            pointer-events: none; /* Нельзя кликнуть на активный язык */
+            cursor: default;
+        }
+
     </style>
 
 </head>
 
 <body>
 
+    <!-- Пример переключателя языков -->
+    <div class="language-switcher">
+        {% for lang in supported_langs %}
+            {# Создаем копию request.view_args, чтобы не изменять оригинал #}
+            {% set view_args = request.view_args.copy() %}
+            {# Обновляем или добавляем lang_code в копии словаря #}
+            {% set _ = view_args.update({'lang_code': lang}) %}
+            {# Используем обновленный словарь view_args для генерации URL #}
+            <a href="{{ url_for(request.endpoint, **view_args) }}"
+               class="{{ 'active' if lang == current_lang else '' }}">
+                {{ lang }}
+            </a>
+        {% endfor %}
+    </div>
+    <!-- Конец примера -->
+
+
     <section class="base">
 
         <section class="aside--base">
+             <!-- Передаем язык в header, если там тоже есть переводы -->
             {% include 'header.html' %}
         </section>
 
@@ -93,48 +130,56 @@
             {% block main %}
             {% endblock %}
 
-            <!-- FAQ и Footer теперь тоже триггеры для своих внутренних элементов (если они есть) -->
+             <!-- Передаем язык в faq, если там тоже есть переводы -->
             <section class="faq pd pd__hg gp gp--xxl animation-trigger" id="faq">
-                {% include 'faq.html' %} <!-- Элементы внутри faq.html нужно будет пометить классом animate-on-scroll -->
+                {% include 'faq.html' %}
             </section>
 
+             <!-- Передаем язык в footer, т.к. там точно есть переводы -->
             <footer class="gp gp--xxl animation-trigger">
-                {% include 'footer.html' %} <!-- Элементы внутри footer.html нужно будет пометить классом animate-on-scroll -->
+                {% include 'footer.html' %}
             </footer>
 
         </section>
 
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
     <script>
+        // --- Lenis Smooth Scroll ---
+        const lenis = new Lenis()
+        function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        // --- Intersection Observer for Animations ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Находим все РОДИТЕЛЬСКИЕ блоки-триггеры
             const animationTriggers = document.querySelectorAll('.animation-trigger');
-            const staggerDelay = 100; // Задержка между анимациями дочерних элементов в мс
+            const staggerDelay = 100; // мс
 
             if (!animationTriggers.length) return;
 
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // Триггер сработает, когда 10% блока-триггера видно
+                threshold: 0.1
             };
 
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const triggerElement = entry.target;
-                        // Находим ВСЕ анимируемые элементы ВНУТРИ сработавшего триггера
                         const elementsToAnimate = triggerElement.querySelectorAll('.animate-on-scroll');
 
                         elementsToAnimate.forEach((el, index) => {
-                            // Добавляем класс is-visible с задержкой
                             setTimeout(() => {
                                 el.classList.add('is-visible');
-                            }, index * staggerDelay); // Увеличиваем задержку для каждого следующего элемента
+                            }, index * staggerDelay);
                         });
 
-                        // Отписываемся от наблюдения за этим триггером, чтобы анимация сработала один раз
                         observer.unobserve(triggerElement);
                     }
                 });
@@ -142,7 +187,6 @@
 
             const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-            // Наблюдаем за каждым блоком-триггером
             animationTriggers.forEach(trigger => {
                 observer.observe(trigger);
             });
