@@ -5,7 +5,9 @@
 html {
   font-size: clamp(12px, 1.5vw + 8px, 18px);
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
+
 
 
 /* Переменные */
@@ -75,6 +77,10 @@ body {
     background: var(--black);
     color: var(--white);
     margin: var(--xl);
+
+    overscroll-behavior: contain;
+    /* Добавляем для предотвращения проблем на iOS */
+    -webkit-overflow-scrolling: touch;
 
 
 }

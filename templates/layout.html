@@ -137,7 +137,12 @@
     <script>
         let lenis;
         if (typeof Lenis !== 'undefined') {
-             lenis = new Lenis();
+             // --- ИЗМЕНЕНИЕ ЗДЕСЬ: Добавляем опции для тач-устройств ---
+             lenis = new Lenis({
+                 smoothTouch: true, // <--- Добавлено
+                 touchMultiplier: 1.5 // <--- Добавлено (можно настроить или убрать)
+             });
+             // -------------------------------------------------------
              function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
              requestAnimationFrame(raf);
         } else {
