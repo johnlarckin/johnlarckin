@@ -64,6 +64,20 @@ def index(lang_code):
     return render_template('index.html')
 # -------------------------------------
 
+# --- Маршрут для /backend/ -> редирект на язык по умолчанию ---
+@app.route('/backend/')
+def backend_root():
+    return redirect(url_for('backend', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы бэкенда с кодом языка ---
+@app.route('/<lang_code>/backend/')
+def backend(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('backend', lang_code=DEFAULT_LANGUAGE))
+    return render_template('backend.html')
+# --------------------------------------------------
+
 # --- Запуск приложения (если это главный файл) ---
 if __name__ == '__main__':
     app.run(debug=True)
