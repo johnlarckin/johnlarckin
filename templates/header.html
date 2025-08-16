@@ -13,11 +13,14 @@
         <div class="col gp gp--lg">
             <!-- Навигационные ссылки -->
             <nav class="col gp gp--xs">
-                <a class="link opc opc--50 anmt" href="{{ url_for('design_root') }}">
-                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_design') }}</span>
+                <a class="link opc opc--50 anmt" href="{{ url_for('ceo_root') }}">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_ceo') }}</span>
                 </a>
-                <a class="link opc opc--50 anmt" href="{{ url_for('backend_root') }}">
-                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_backend') }}</span>
+                <a class="link opc opc--50 anmt" href="{{ url_for('cfo_root') }}">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_cfo') }}</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="{{ url_for('cto_root') }}">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_cto') }}</span>
                 </a>
                 <a class="link opc opc--50 anmt" href="{{ url_for('ai_root') }}">
                     <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_ai') }}</span>
@@ -25,12 +28,7 @@
                 <a class="link opc opc--50 anmt" href="{{ url_for('security_root') }}">
                     <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_security') }}</span>
                 </a>
-                <a class="link opc opc--50 anmt" href="{{ url_for('frontend_root') }}">
-                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_frontend') }}</span>
-                </a>
-                <a class="link opc opc--50 anmt" href="{{ url_for('mobile_root') }}">
-                    <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_mobile') }}</span>
-                </a>
+                {% if page == 'design' %}
                 <a class="link opc opc--50 anmt" href="#principles">
                     <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_principles') }}</span>
                 </a>
@@ -58,6 +56,7 @@
                 <a class="link opc anmt" href="#faq">
                     <span class="nav-link-bar"></span><span class="nav-link-text">{{ _('nav_faq') | safe }}</span>
                 </a>
+                {% endif %}
             </nav>
 
             <!-- Кнопки -->

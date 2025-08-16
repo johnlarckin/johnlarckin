@@ -61,7 +61,50 @@ def index(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('index', lang_code=DEFAULT_LANGUAGE))
     # Шаблон index.html будет отрендерен с доступом к _(), current_lang, supported_langs
-    return render_template('index.html')
+    return render_template('index.html', page='index')
+# ------------------------------------------------------------
+
+# --- Маршрут для /ceo/ -> редирект на язык по умолчанию ---
+@app.route('/ceo/')
+def ceo_root():
+    return redirect(url_for('ceo', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы CEO с кодом языка ---
+@app.route('/<lang_code>/ceo/')
+def ceo(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('ceo', lang_code=DEFAULT_LANGUAGE))
+    return render_template('ceo.html', page='ceo')
+# --------------------------------------------------
+
+# --- Маршрут для /cfo/ -> редирект на язык по умолчанию ---
+@app.route('/cfo/')
+def cfo_root():
+    return redirect(url_for('cfo', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы CFO с кодом языка ---
+@app.route('/<lang_code>/cfo/')
+def cfo(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('cfo', lang_code=DEFAULT_LANGUAGE))
+    return render_template('cfo.html', page='cfo')
+# --------------------------------------------------
+
+# --- Маршрут для /cto/ -> редирект на язык по умолчанию ---
+@app.route('/cto/')
+def cto_root():
+    return redirect(url_for('cto', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы CTO с кодом языка ---
+@app.route('/<lang_code>/cto/')
+def cto(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('cto', lang_code=DEFAULT_LANGUAGE))
+    return render_template('cto.html', page='cto')
+# --------------------------------------------------
 # -------------------------------------
 
 # --- Маршрут для /design/ -> редирект на язык по умолчанию ---
@@ -75,7 +118,7 @@ def design_root():
 def design(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('design', lang_code=DEFAULT_LANGUAGE))
-    return render_template('design.html')
+    return render_template('design.html', page='design')
 # --------------------------------------------------
 
 # --- Маршрут для /backend/ -> редирект на язык по умолчанию ---
@@ -89,7 +132,7 @@ def backend_root():
 def backend(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('backend', lang_code=DEFAULT_LANGUAGE))
-    return render_template('backend.html')
+    return render_template('backend.html', page='backend')
 # --------------------------------------------------
 
 # --- Маршрут для /ai/ -> редирект на язык по умолчанию ---
@@ -103,7 +146,7 @@ def ai_root():
 def ai(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('ai', lang_code=DEFAULT_LANGUAGE))
-    return render_template('ai.html')
+    return render_template('ai.html', page='ai')
 # --------------------------------------------------
 
 # --- Маршрут для /security/ -> редирект на язык по умолчанию ---
@@ -117,7 +160,7 @@ def security_root():
 def security(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('security', lang_code=DEFAULT_LANGUAGE))
-    return render_template('security.html')
+    return render_template('security.html', page='security')
 # --------------------------------------------------
 
 # --- Маршрут для /frontend/ -> редирект на язык по умолчанию ---
@@ -131,7 +174,7 @@ def frontend_root():
 def frontend(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('frontend', lang_code=DEFAULT_LANGUAGE))
-    return render_template('frontend.html')
+    return render_template('frontend.html', page='frontend')
 # --------------------------------------------------
 
 # --- Маршрут для /mobile/ -> редирект на язык по умолчанию ---
@@ -145,7 +188,7 @@ def mobile_root():
 def mobile(lang_code):
     if lang_code not in SUPPORTED_LANGUAGES:
         return redirect(url_for('mobile', lang_code=DEFAULT_LANGUAGE))
-    return render_template('mobile.html')
+    return render_template('mobile.html', page='mobile')
 # --------------------------------------------------
 
 # --- Запуск приложения (если это главный файл) ---

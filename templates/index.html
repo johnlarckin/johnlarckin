@@ -29,31 +29,24 @@
                 </div>
             </div>
             <div class="grid">
-                <a href="{{ url_for('design', lang_code=current_lang) }}" class="case sequential-container">
+                <a href="{{ url_for('ceo', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_design') }}</h3>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_ceo') }}</h3>
                         </div>
                     </div>
                 </a>
-                <a href="{{ url_for('frontend', lang_code=current_lang) }}" class="case sequential-container">
+                <a href="{{ url_for('cfo', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_frontend') }}</h3>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_cfo') }}</h3>
                         </div>
                     </div>
                 </a>
-                <a href="{{ url_for('backend', lang_code=current_lang) }}" class="case sequential-container">
+                <a href="{{ url_for('cto', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_backend') }}</h3>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ url_for('mobile', lang_code=current_lang) }}" class="case sequential-container">
-                    <div class="aside--card pd pd__xl">
-                        <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_mobile') }}</h3>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_cto') }}</h3>
                         </div>
                     </div>
                 </a>
