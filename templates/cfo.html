@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <main class="gp gp--xs">
+        <section class="container gp gp--xs sequential-container">
+            <div class="hero sequential-container">
+                <div class="aside aside--hero pd pd__hg">
+                    <div class="col gp gp--xs">
+                        <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('cfo_hero_title') }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <a href="{{ url_for('design', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_design') }}</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ url_for('backend', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_backend') }}</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ url_for('frontend', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_frontend') }}</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="{{ url_for('mobile', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_mobile') }}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+{% endblock %}
