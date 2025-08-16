@@ -106,6 +106,34 @@ def security(lang_code):
     return render_template('security.html')
 # --------------------------------------------------
 
+# --- Маршрут для /frontend/ -> редирект на язык по умолчанию ---
+@app.route('/frontend/')
+def frontend_root():
+    return redirect(url_for('frontend', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы фронтенда с кодом языка ---
+@app.route('/<lang_code>/frontend/')
+def frontend(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('frontend', lang_code=DEFAULT_LANGUAGE))
+    return render_template('frontend.html')
+# --------------------------------------------------
+
+# --- Маршрут для /mobile/ -> редирект на язык по умолчанию ---
+@app.route('/mobile/')
+def mobile_root():
+    return redirect(url_for('mobile', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы мобильных приложений с кодом языка ---
+@app.route('/<lang_code>/mobile/')
+def mobile(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('mobile', lang_code=DEFAULT_LANGUAGE))
+    return render_template('mobile.html')
+# --------------------------------------------------
+
 # --- Запуск приложения (если это главный файл) ---
 if __name__ == '__main__':
     app.run(debug=True)
