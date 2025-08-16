@@ -4,687 +4,74 @@
 
     <main class="gp gp--xs">
 
-        <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="services">
-
-                <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container"> <!-- Hero тоже может быть контейнером -->
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col gp gp--xs">
-                                <!-- Элемент для последовательной анимации -->
-                                <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('hero_title') | safe }}</h1>
-                                <!-- Элемент для последовательной анимации -->
-                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hero_subtitle') }}</h2>
-                            </div>
-                        </div>
-
-                        <div class="bside bside--hero">
-                             <!-- Элемент для последовательной анимации -->
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/15_years.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                </div>
-
-                <div class="grid">
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card gp gp--lg sequential-container"> <!-- Карточка тоже контейнер -->
-
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <!-- Элемент для последовательной анимации -->
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('services_saas_title') | safe }}</h3>
-                                 <!-- Элемент для последовательной анимации -->
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('services_saas_desc') }}</h4>
-                            </div>
-                        </div>
-
-                        <div class="bside--card">
-                             <!-- Элемент для последовательной анимации -->
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/saas.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card gp gp--lg sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('services_mobile_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('services_mobile_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/ios.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card gp gp--lg sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('services_iot_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('services_iot_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/bluetooth.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('services_peripheral_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('services_peripheral_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/info.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-        <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="principles">
-
-                <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col gp gp--xs">
-                                <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('principles_hero_title') | safe }}</h1>
-                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('principles_hero_desc') }}</h2>
-                            </div>
-                        </div>
-
-                        <div class="bside bside--hero">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/pro.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-
-                </div>
-                <div class="grid">
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_errors_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_errors_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/mistakes.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_feedback_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_feedback_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/comments.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_ethics_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('principles_card_ethics_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/bullshit.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('principles_boundaries_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('principles_boundaries_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/bla.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-        <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="cases">
-
-             <!-- Элемент для последовательной анимации -->
+        <!-- Hero Section -->
+        <section class="container gp gp--xs sequential-container" id="about">
             <div class="hero sequential-container">
-
-                    <div class="aside aside--hero pd pd__hg">
-                        <div class="col gp gp--xs">
-                            <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('cases_hero_title') | safe }}</h1>
-                            <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('cases_hero_desc') }}</h2>
-                        </div>
+                <div class="aside aside--hero pd pd__hg">
+                    <div class="col gp gp--xs">
+                        <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('about_hero_title') | safe }}</h1>
+                        <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('about_hero_subtitle') }}</h2>
                     </div>
+                </div>
+                <div class="bside bside--hero">
+                    <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo"></div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="bside">
-
+        <!-- Menu Section -->
+        <section class="container gp gp--xs sequential-container" id="menu">
+            <div class="hero sequential-container">
+                <div class="aside aside--hero pd pd__hg">
+                    <div class="col gp gp--xs">
+                        <h2 class="title fs__xl fw__bd animate-sequential-item">{{ _('about_menu_title') }}</h2>
                     </div>
-
+                </div>
             </div>
             <div class="grid">
-                <!-- Элемент для последовательной анимации -->
-                <a href="https://www.figma.com/design/Wxq7lPZAYENXSmqTzWZANe/Safa-App---Behance---Website?node-id=359-5717&t=N6pWTBXQaxeRRw7G-1" class="case sequential-container">
+                <a href="{{ url_for('design', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_safa_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_safa_desc') }}</h4>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_design') }}</h3>
                         </div>
                     </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/safa.png') }}" alt="Tool icon 1"></div>
-                    </div>
                 </a>
-
-                <!-- Элемент для последовательной анимации -->
-                <a href="https://www.figma.com/design/634nu65EqK3lC2hfkM5Xhe/BIO-3.0---Behance---Website?node-id=695-4375&t=ZjsGz8yv284jHyin-1" class="case sequential-container">
+                <a href="{{ url_for('frontend', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_bio_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_bio_desc') }}</h4>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_frontend') }}</h3>
                         </div>
                     </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/324shots_so.png') }}" alt="Tool icon 1"></div>
-                    </div>
                 </a>
-
-                <!-- Элемент для последовательной анимации -->
-                <a href="https://www.figma.com/design/9mCaWmgM7hZ4N8klaCaLZl/Imkon-Savdo-Quad----Behance---Website?m=auto&t=sz8IsoG4icwq96rF-1" class="case sequential-container">
+                <a href="{{ url_for('backend', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_imkon_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_imkon_desc') }}</h4>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_backend') }}</h3>
                         </div>
                     </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/18shots_so.png') }}" alt="Tool icon 1"></div>
-                    </div>
                 </a>
-
-                <!-- Элемент для последовательной анимации -->
-                <a href="https://www.figma.com/design/43vujTXx7wVIuxV1NKzOU8/JO---Behance---Website?node-id=884-8153&t=pvDlzM8kCPhknuOF-1" class="case sequential-container">
+                <a href="{{ url_for('mobile', lang_code=current_lang) }}" class="case sequential-container">
                     <div class="aside--card pd pd__xl">
                         <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_jo_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('cases_card_jo_desc') }}</h4>
-
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_mobile') }}</h3>
                         </div>
                     </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/jo.png') }}" alt="Tool icon 1"></div>
+                </a>
+                <a href="{{ url_for('ai', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_ai') }}</h3>
+                        </div>
                     </div>
                 </a>
-
+                <a href="{{ url_for('security', lang_code=current_lang) }}" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('nav_security') }}</h3>
+                        </div>
+                    </div>
+                </a>
             </div>
-
-        </section>
-
-        <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="design-system">
-
-            <!-- Элемент для последовательной анимации -->
-            <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col gp gp--xs">
-                            <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('atomic_main_title') | safe }}</h1>
-                            <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('atomic_main_desc') }}</h2>
-                            </div>
-                    </div>
-
-                    <div class="bside bside--hero">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/designsystem.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-
-            </div>
-            <div class="grid">
-                 <!-- Элемент для последовательной анимации -->
-                <div class="card sequential-container">
-                    <div class="aside--card pd pd__xl">
-                        <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('atomic_tokens_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('atomic_tokens_desc') }}</h4>
-                        </div>
-                    </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/1.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-                </div>
-
-                <!-- Элемент для последовательной анимации -->
-                <div class="card sequential-container">
-                    <div class="aside--card pd pd__xl">
-                        <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('atomic_atoms_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('atomic_atoms_desc') }}</h4>
-                        </div>
-                    </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/2.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-                </div>
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="card sequential-container">
-                    <div class="aside--card pd pd__xl">
-                        <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('atomic_molecules_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('atomic_molecules_desc') }}</h4>
-                        </div>
-                    </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/3.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-                </div>
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="card sequential-container">
-                    <div class="aside--card pd pd__xl">
-                        <div class="col gp gp--sm">
-                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('atomic_components_title') }}</h3>
-                            <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('atomic_components_desc') }}</h4>
-                        </div>
-                    </div>
-                    <div class="bside--card">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/4.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-         <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="approach">
-
-                <!-- Элемент для последовательной анимации -->
-                 <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col   gp gp--xs">
-                            <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('approach_main_title') }}</h1>
-                            <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('approach_main_desc') }}</h2>
-                        </div>
-                        </div>
-
-                        <div class="bside">
-
-                        </div>
-
-                </div>
-                <div class="grid">
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('approach_adaptivity_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('approach_adaptivity_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/px.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('approach_states_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('approach_states_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/status.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('approach_guidelines_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('approach_guidelines_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/guidelines.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('approach_devs_understanding_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('approach_devs_understanding_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/code.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-         <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="development-principles">
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col gp gp--xs">
-                                <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('dev_principles_main_title') | safe }}</h1>
-                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_main_desc') }}</h2>
-                            </div>
-                    </div>
-
-                    <div class="bside">
-
-                    </div>
-                </div>
-                <div class="grid">
-                    <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_function_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_function_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/5.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                    <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_ergonomics_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_ergonomics_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/6.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_visualcomm_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_visualcomm_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/7.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_scalability_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('dev_principles_scalability_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/8.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-         <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="industries">
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col  gp gp--xs">
-                                <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('industries_main_title') | safe }}</h1>
-                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('industries_main_desc') }}</h2>
-                            </div>
-                        </div>
-
-                        <div class="bside bside--hero">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/23.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                </div>
-
-                <div class="grid">
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('industries_saas_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('industries_saas_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/11.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('industries_corporate_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('industries_corporate_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/12.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('industries_startups_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('industries_startups_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/13.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('industries_entertainment_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('industries_entertainment_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/14.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-         <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="expertise">
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container">
-
-                        <div class="aside aside--hero pd pd__hg">
-                            <div class="col gp gp--xs">
-                                <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('expertise_main_title') | safe }}</h1>
-                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('expertise_main_desc') }}</h2>
-                            </div>
-                        </div>
-
-                        <div class="bside bside--hero">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/27.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-
-                </div>
-                <div class="grid">
-                    <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('expertise_digital_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('expertise_digital_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/15.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('expertise_mobile_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('expertise_mobile_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/16.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('expertise_frontend_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('expertise_frontend_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/17.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('expertise_data_driven_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('expertise_data_driven_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/18.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </section>
-
-         <!-- Контейнер для последовательной анимации -->
-        <section class="container gp gp--xs sequential-container" id="standards">
-
-                 <!-- Элемент для последовательной анимации -->
-                <div class="hero sequential-container">
-
-                    <div class="aside aside--hero pd pd__hg">
-                        <div class="col  gp gp--xs">
-                            <h1 class="title fs__xxl fw__bd animate-sequential-item">{{ _('hated_stuff_main_title') | safe }}</h1>
-                            <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_main_desc') }}</h2>
-                        </div>
-                    </div>
-
-                    <div class="bside bside--hero">
-                        <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/29.svg') }}" alt="Tool icon 1"></div>
-                    </div>
-                </div>
-                <div class="grid">
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_docs_title') }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_docs_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/21.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_standards_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_standards_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/22.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                     <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_marketing_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_marketing_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/19.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                    <!-- Элемент для последовательной анимации -->
-                    <div class="card sequential-container">
-                        <div class="aside--card pd pd__xl">
-                            <div class="col gp gp--sm">
-                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_guidelines_title') | safe }}</h3>
-                                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('hated_stuff_guidelines_desc') }}</h4>
-                            </div>
-                        </div>
-                        <div class="bside--card">
-                            <div class="icon animate-sequential-item"><img src="{{ url_for('static', filename='img/20.svg') }}" alt="Tool icon 1"></div>
-                        </div>
-                    </div>
-
-                </div>
-
         </section>
 
     </main>

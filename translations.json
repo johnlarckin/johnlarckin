@@ -640,7 +640,12 @@
     "mobile_hated_stuff_optimization_title": "Поддержка <span class=\"underline green\">старых версий ОС.</span>",
     "mobile_hated_stuff_optimization_desc": "Мы обеспечиваем корректную работу наших приложений на старых версиях iOS и Android.",
     "mobile_hated_stuff_legacy_title": "Оптимизация <span class=\"underline green\">размера приложения.</span>",
-    "mobile_hated_stuff_legacy_desc": "Мы следим за размером приложения, чтобы пользователи могли быстро его скачать и установить."
+    "mobile_hated_stuff_legacy_desc": "Мы следим за размером приложения, чтобы пользователи могли быстро его скачать и установить.",
+
+    "about_hero_title": "О нас. <span class=\"underline green\">Мы создаем цифровые продукты.</span>",
+    "about_hero_subtitle": "Мы — команда дизайнеров и разработчиков, которая помогает бизнесу расти с помощью технологий.",
+    "about_menu_title": "Что мы делаем",
+    "nav_design": "Дизайн"
   },
   "en": {
     "page_title": "Product Designer John Larckin",
@@ -1283,6 +1288,11 @@
     "mobile_hated_stuff_optimization_title": "Support for <span class=\"underline green\">older OS versions.</span>",
     "mobile_hated_stuff_optimization_desc": "We ensure that our applications work correctly on older versions of iOS and Android.",
     "mobile_hated_stuff_legacy_title": "Optimizing <span class=\"underline green\">application size.</span>",
-    "mobile_hated_stuff_legacy_desc": "We monitor the size of the application so that users can quickly download and install it."
+    "mobile_hated_stuff_legacy_desc": "We monitor the size of the application so that users can quickly download and install it.",
+
+    "about_hero_title": "About Us. <span class=\"underline green\">We create digital products.</span>",
+    "about_hero_subtitle": "We are a team of designers and developers that helps businesses grow with the help of technology.",
+    "about_menu_title": "What we do",
+    "nav_design": "Design"
   }
 }

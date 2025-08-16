@@ -64,6 +64,20 @@ def index(lang_code):
     return render_template('index.html')
 # -------------------------------------
 
+# --- Маршрут для /design/ -> редирект на язык по умолчанию ---
+@app.route('/design/')
+def design_root():
+    return redirect(url_for('design', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы дизайна с кодом языка ---
+@app.route('/<lang_code>/design/')
+def design(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('design', lang_code=DEFAULT_LANGUAGE))
+    return render_template('design.html')
+# --------------------------------------------------
+
 # --- Маршрут для /backend/ -> редирект на язык по умолчанию ---
 @app.route('/backend/')
 def backend_root():
