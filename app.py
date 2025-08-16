@@ -78,6 +78,34 @@ def backend(lang_code):
     return render_template('backend.html')
 # --------------------------------------------------
 
+# --- Маршрут для /ai/ -> редирект на язык по умолчанию ---
+@app.route('/ai/')
+def ai_root():
+    return redirect(url_for('ai', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы ИИ с кодом языка ---
+@app.route('/<lang_code>/ai/')
+def ai(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('ai', lang_code=DEFAULT_LANGUAGE))
+    return render_template('ai.html')
+# --------------------------------------------------
+
+# --- Маршрут для /security/ -> редирект на язык по умолчанию ---
+@app.route('/security/')
+def security_root():
+    return redirect(url_for('security', lang_code=DEFAULT_LANGUAGE))
+# ------------------------------------------------------------
+
+# --- Маршрут для страницы безопасности с кодом языка ---
+@app.route('/<lang_code>/security/')
+def security(lang_code):
+    if lang_code not in SUPPORTED_LANGUAGES:
+        return redirect(url_for('security', lang_code=DEFAULT_LANGUAGE))
+    return render_template('security.html')
+# --------------------------------------------------
+
 # --- Запуск приложения (если это главный файл) ---
 if __name__ == '__main__':
     app.run(debug=True)
