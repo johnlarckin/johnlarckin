@@ -52,6 +52,18 @@ class BlockAdminView(CustomModelView):
     column_filters = ['status', 'category', 'subcategory']
     # Валидация, чтобы можно было выбрать только категорию или подкатегорию, не оба
     form_columns = ['name', 'category', 'subcategory', 'status', 'position']
+    form_ajax_refs = {
+        'category': {
+            'fields': ('title_ru', 'slug'),
+            'placeholder': 'Начните вводить для поиска категории...',
+            'page_size': 10,
+        },
+        'subcategory': {
+            'fields': ('title_ru', 'slug'),
+            'placeholder': 'Начните вводить для поиска подкатегории...',
+            'page_size': 10,
+        }
+    }
     form_args = {
         'name': {'label': 'Служебное имя блока'},
         'category': {'label': 'Привязка к категории'},
@@ -94,6 +106,18 @@ class FaqItemAdminView(CustomModelView):
         'category', 'subcategory', 'title_ru', 'title_en', 'subtitle_ru', 'subtitle_en',
         'question_ru', 'question_en', 'answer_ru', 'answer_en', 'status', 'position'
     ]
+    form_ajax_refs = {
+        'category': {
+            'fields': ('title_ru', 'slug'),
+            'placeholder': 'Начните вводить для поиска категории...',
+            'page_size': 10,
+        },
+        'subcategory': {
+            'fields': ('title_ru', 'slug'),
+            'placeholder': 'Начните вводить для поиска подкатегории...',
+            'page_size': 10,
+        }
+    }
     form_args = {
         'category': {'label': 'Привязка к категории'},
         'subcategory': {'label': 'Привязка к подкатегории'},
