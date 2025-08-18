@@ -5,7 +5,7 @@
 
         <!-- Верхняя часть: Лого и Заголовок -->
         <div class="col gp gp--lg">
-            <a class="logo" href="{{ url_for('index', lang_code=current_lang) }}"></a>
+            <a class="logo" href="{{ url_for('main.index', lang_code=current_lang) }}"></a>
             <h1 class="title fs__lg">{{ _('header_title') | safe }}</h1>
         </div>
 
@@ -76,7 +76,7 @@
 <!-- Mobile Header -->
 <header class="mobile">
     <div class="row gp gp--hg center">
-        <a class="logo" href="{{ url_for('index', lang_code=current_lang) }}"></a>
+        <a class="logo" href="{{ url_for('main.index', lang_code=current_lang) }}"></a>
         <h1 class="title fs__lg">{{ _('header_title') | safe }}</h1>
     </div>
 

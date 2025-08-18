@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            {# Placeholder for the navigation menu #}
+            <h3>Меню</h3>
+            <ul>
+            {% for c in all_categories %}
+                <li>
+                    <a href="{{ url_for('main.category', lang_code=current_lang, category_slug=c.slug) }}">{{ c.title_en or c.title_ru }}</a>
+                    {% if c.subcategories %}
+                        <ul>
+                        {% for s in c.subcategories %}
+                            <li>
+                                <a href="{{ url_for('main.subcategory', lang_code=current_lang, category_slug=c.slug, subcategory_slug=s.slug) }}">{{ s.title_en or s.title_ru }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <h1>{{ (category.title_en or category.title_ru) | safe }}</h1>
+
+            {# Render blocks #}
+            <main class="gp gp--xs">
+                {% for block in category.blocks %}
+                    {% include 'includes/_block.html' %}
+                {% endfor %}
+            </main>
+
+            {# Render FAQ #}
+            {% if category.faq_items %}
+                {% include 'includes/_faq.html' with context %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

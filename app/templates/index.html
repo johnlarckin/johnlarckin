@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<main class="gp gp--xs">
+
+    {# Loop through each block passed from the view function #}
+    {% for block in blocks %}
+        {% if block.status.name == 'published' %}
+            <section class="container gp gp--xs sequential-container">
+
+                {# Find the hero card (index 0) and other cards #}
+                {% set hero_card = namespace(value=None) %}
+                {% set other_cards = [] %}
+                {% for card in block.cards %}
+                    {% if card.status.name == 'published' %}
+                        {% if card.card_index == 0 %}
+                            {% set hero_card.value = card %}
+                        {% else %}
+                            {% do other_cards.append(card) %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+
+                {# Render the hero card if it exists #}
+                {% if hero_card.value %}
+                    {% set card = hero_card.value %}
+                    <div class="hero sequential-container">
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                                <h1 class="title fs__xxl fw__bd animate-sequential-item">
+                                    {{ (card.title_en or card.title_ru) | safe }}
+                                </h1>
+                                <h2 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">
+                                    {{ card.subtitle_en or card.subtitle_ru }}
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="bside bside--hero">
+                            <div class="icon animate-sequential-item">
+                                {% if card.image_path %}
+                                    <img src="{{ url_for('static', filename=card.image_path) }}" alt="{{ card.alt_en or card.alt_ru }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {# Render the grid of other cards if they exist #}
+                {% if other_cards %}
+                <div class="grid">
+                    {% for card in other_cards | sort(attribute='position') %}
+                        <div class="card gp gp--lg sequential-container">
+                            <div class="aside--card pd pd__xl">
+                                <div class="col gp gp--sm">
+                                    <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">
+                                        {{ (card.title_en or card.title_ru) | safe }}
+                                    </h3>
+                                    <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">
+                                        {{ card.subtitle_en or card.subtitle_ru }}
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="bside--card">
+                                <div class="icon animate-sequential-item">
+                                    {% if card.image_path %}
+                                        <img src="{{ url_for('static', filename=card.image_path) }}" alt="{{ card.alt_en or card.alt_ru }}">
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </section>
+        {% endif %}
+    {% endfor %}
+
+</main>
+{% endblock %}

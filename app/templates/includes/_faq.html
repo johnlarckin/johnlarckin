@@ -1,0 +1,29 @@
+<section class="faq-section container gp gp--xs sequential-container" id="faq">
+    <div class="aside aside--faq">
+        <div class="col gp gp--lg">
+            <div class="col gp gp--xs">
+                {# These titles could also come from the category/subcategory object if needed #}
+                <h2 class="title fs__xxl fw__bd animate-sequential-item">{{ _('faq_main_title') }}</h2>
+                <h4 class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">{{ _('faq_main_subtitle') }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="bside bside--faq">
+        <div class="col gp gp--lg">
+            {% for item in items %}
+                <div class="faq-item animate-sequential-item">
+                    <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-{{ loop.index }}" tabindex="0">
+                        <div class="title fs__md fw__md opc opc--75">{{ item.question_en or item.question_ru }}</div>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-{{ loop.index }}" role="region">
+                        <div class="subtitle fs__md fw__md opc opc--75">{{ item.answer_en or item.answer_ru }}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{# The accordion script should be in the main layout file to avoid duplication #}
+{# but for now we can assume it's loaded. The original faq.html had it. #}
