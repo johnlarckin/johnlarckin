@@ -3,7 +3,10 @@
 
 
 html {
-  font-size: clamp(12px, 1.5vw + 8px, 18px);
+  /* Same fluid rem scale used by the Dubb.pro landing:
+     16px up to 1536px, then smoothly up to 20px at 1920px. */
+  font-size: clamp(100%, 1.0416666667vw, 125%);
+  min-width: 320px;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
 }
@@ -22,6 +25,15 @@ html {
   --blue: #0088cc;
   --grey: rgba(255, 255, 255, 0.05);
 
+  /* Fluid spacing/type scale. Keeping it here prevents breakpoint jumps. */
+  --zr: 0.25rem;
+  --xs: 0.5rem;
+  --sm: 0.75rem;
+  --md: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+  --lg: clamp(1.1rem, 0.95rem + 1vw, 1.5rem);
+  --xl: clamp(1.25rem, 1.05rem + 1.25vw, 1.7rem);
+  --xxl: clamp(1.5rem, 1.2rem + 1.5vw, 2.2rem);
+  --hg: clamp(2rem, 1.75rem + 1vw, 2.5rem);
 
   /* Шрифты */
   --primary: "Unbounded", sans-serif;
@@ -77,6 +89,7 @@ body {
     background: var(--black);
     color: var(--white);
     margin: var(--xl);
+    overflow-x: hidden;
 
     overscroll-behavior: contain;
     /* Добавляем для предотвращения проблем на iOS */
@@ -162,8 +175,10 @@ h1, h2, h3, h4, h5, p {
 }
 
 .copyright {
-  position: absolute;
-  bottom: var(--lg);
+  position: static;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: var(--hg);
 }
 
 .center {
@@ -195,17 +210,6 @@ small {
 
 /* Мобильные (до 576px) */
 @media (max-width: 576px) {
-  :root {
-    --zr: 0.25rem; 
-    --xs: 0.5rem;   
-    --sm: 0.75rem; 
-    --md: 0.9rem;   
-    --lg: 1.1rem;  
-    --xl: 1.25rem;    
-    --xxl: 1.5rem; 
-    --hg: 2rem;   
-  }
-
   header {
     display: none;
 
@@ -220,17 +224,6 @@ small {
 
 /* Планшеты (577px–768px) */
 @media (min-width: 577px) and (max-width: 768px) {
-  :root {
-    --zr: 0.25rem; 
-    --xs: 0.5rem;  
-    --sm: 0.75rem; 
-    --md: 1rem;    
-    --lg: 1.5rem;  
-    --xl: 1.7rem;    
-    --xxl: 2.2rem; 
-    --hg: 2.5rem; 
-  }
-
   header {
     display: none;
   }
@@ -246,18 +239,6 @@ small {
 
 /* Маленькие десктопы (769px–992px) */
 @media (min-width: 769px) and (max-width: 992px) {
-  :root {
-    --zr: 0.25rem; 
-    --xs: 0.5rem;  
-    --sm: 0.75rem; 
-    --md: 1rem;    
-    --lg: 1.5rem;  
-    --xl: 1.7rem;    
-    --xxl: 2.2rem; 
-    --hg: 2.5rem; 
-  }
-
-
   header {
     display: none;
   }
@@ -273,17 +254,6 @@ small {
 
 /* Средние десктопы (993px–1336px) */
 @media (min-width: 993px) {
-  :root {
-    --zr: 0.25rem; 
-    --xs: 0.5rem;  
-    --sm: 0.75rem; 
-    --md: 0.9rem;    
-    --lg: 1rem;  
-    --xl: 1.5rem;    
-    --xxl: 2rem; 
-    --hg: 2.5rem;   
-  }
-
   .base {
     width: 100%;
     display: flex;
@@ -296,17 +266,6 @@ small {
 
 /* Большие десктопы (1400px+) */
 @media (min-width: 1600px) {
-  :root {
-    --zr: 0.25rem; 
-    --xs: 0.5rem;  
-    --sm: 0.75rem; 
-    --md: 1rem;    
-    --lg: 1.5rem;  
-    --xl: 1.7rem;    
-    --xxl: 2.2rem; 
-    --hg: 3rem;   
-  }
-
   .base {
     width: 100%;
     display: flex;
@@ -318,9 +277,9 @@ small {
 }
 
 .logo {
-  background-image: url('/static/img/logo.svg');
-  height: 120px;
-  width: 120px;
+  background-image: url('../img/logo.svg');
+  height: 7.5rem;
+  width: 7.5rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

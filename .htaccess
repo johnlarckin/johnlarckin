@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Keep one canonical Russian URL and clean language URLs.
+RewriteRule ^ru(?:/index\.html)?/?$ https://johnlarckin.com/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+RewriteRule ^index\.html$ https://johnlarckin.com/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+en/index\.html(?:[?\s]) [NC]
+RewriteRule ^en/index\.html$ https://johnlarckin.com/en/ [R=301,L]
+
+# Canonical host.
+RewriteCond %{HTTP_HOST} ^www\.johnlarckin\.com$ [NC]
+RewriteRule ^ https://johnlarckin.com%{REQUEST_URI} [R=301,L]
+
+# HTTPS everywhere.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+RewriteRule ^ https://johnlarckin.com%{REQUEST_URI} [R=301,L]

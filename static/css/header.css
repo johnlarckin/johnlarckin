@@ -1,13 +1,21 @@
 header {
-
     position: sticky;
     top: 0;
-    justify-content: space-around;
-    height: 100vh;
-    display: flex
-    ;
-    justify-content: space-between;
+    display: flex;
+    height: calc(100svh - (2 * var(--xl)));
+    min-height: 0;
     flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+}
+
+header::-webkit-scrollbar {
+    display: none;
+}
+
+header.web > .col {
+    min-height: 100%;
 }
 
 

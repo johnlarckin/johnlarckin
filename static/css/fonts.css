@@ -1,14 +1,18 @@
 .title {
     font-family: var(--primary);
     font-weight: var(--medium);
-    word-break: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .subtitle {
     font-family: var(--secondary);
     filter: opacity(0.5);
     font-weight: var(--regular);
-    word-break: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 

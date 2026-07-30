@@ -24,7 +24,7 @@
             .faq-item {
                 /* Можно добавить нижний бордер, если нужно разделение */
                 border-bottom: 1px solid #ffffff0f;
-                 padding: 10px 0; /* Небольшие отступы для каждого элемента */
+                 padding: 0.625rem 0; /* Небольшие отступы для каждого элемента */
                  overflow: hidden; /* Обязательно для анимации max-height */
             }
             .faq-item:last-child {
@@ -43,15 +43,15 @@
             /* Стилизация иконки */
             .faq-icon {
                 flex-shrink: 0; /* Запретить иконке сжиматься */
-                margin-left: 15px; /* Отступ слева от текста вопроса */
-                width: 24px;      /* Ширина кружка */
-                height: 24px;     /* Высота кружка */
+                margin-left: 0.9375rem; /* Отступ слева от текста вопроса */
+                width: 1.5rem;      /* Ширина кружка */
+                height: 1.5rem;     /* Высота кружка */
                 background-color: white; /* Белый фон */
                 border-radius: 50%;   /* Сделать круглым */
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 18px;    /* Размер символа +/- */
+                font-size: 1.125rem;    /* Размер символа +/- */
                 font-weight: bold;
                 color: #555;        /* Цвет символа */
                 border: 1px solid #ddd; /* Тонкая рамка для видимости на светлом фоне */
@@ -68,7 +68,7 @@
             }
        
             .faq-answer .subtitle {
-                 padding-top: 16px; 
+                 padding-top: 1rem;
             }
 
 
@@ -136,6 +136,4 @@
 
 
 }
-
-
 

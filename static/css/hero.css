@@ -48,10 +48,18 @@
 
 /* Средние десктопы (993px–1336px) */
 @media (min-width: 993px) {
+}
 
+/* Узкие десктопы: отдаём тексту больше места, чем иллюстрации. */
+@media (min-width: 993px) and (max-width: 1199px) {
+    .hero > .aside--hero {
+        flex: 0 0 64%;
+    }
 
-
-
+    .hero > .bside--hero,
+    .hero > .bside {
+        flex: 0 0 36%;
+    }
 }
 
 /* Большие десктопы (1400px+) */
