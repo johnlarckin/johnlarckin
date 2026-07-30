@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>John Larckin — Social Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+      background: #050505;
+      color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      position: relative;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      padding: 56px 64px;
+    }
+    body::before {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        radial-gradient(circle at 100% 100%, rgba(255, 18, 74, .26), transparent 43%),
+        radial-gradient(circle at 67% 0%, rgba(0, 136, 204, .18), transparent 36%);
+      background-size: 32px 32px, 32px 32px, auto, auto;
+      content: "";
+      mask-image: linear-gradient(90deg, transparent 20%, #000 62%);
+    }
+    .identity, .content { position: relative; z-index: 1; }
+    .identity {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255,255,255,.12);
+      padding-right: 50px;
+    }
+    .logo {
+      width: 250px;
+      height: 150px;
+      background: url("/static/img/logo.svg") left center / contain no-repeat;
+    }
+    .domain {
+      color: rgba(255,255,255,.58);
+      font-size: 20px;
+      letter-spacing: .02em;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 58px;
+    }
+    .role {
+      margin-bottom: 24px;
+      color: rgba(255,255,255,.62);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 700px;
+      margin: 0 0 32px;
+      font-size: 68px;
+      line-height: .98;
+      letter-spacing: -.045em;
+    }
+    h1 span {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-thickness: 5px;
+      text-underline-offset: 8px;
+    }
+    .capabilities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 720px;
+    }
+    .capabilities span {
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      padding: 11px 17px;
+      color: rgba(255,255,255,.82);
+      font-size: 17px;
+    }
+    .accent {
+      position: absolute;
+      right: 60px;
+      bottom: 48px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ff124a;
+      box-shadow: 0 0 46px 18px rgba(255,18,74,.32);
+    }
+  </style>
+</head>
+<body>
+  <section class="identity">
+    <div class="logo"></div>
+    <div class="domain">johnlarckin.com</div>
+  </section>
+  <main class="content">
+    <div class="role">Product Designer · Engineer · Speech AI</div>
+    <h1>Design. Build. <span>Ship.</span></h1>
+    <div class="capabilities">
+      <span>Product &amp; UX</span>
+      <span>Full-stack Engineering</span>
+      <span>AI Dubbing &amp; TTS</span>
+      <span>Call Intelligence &amp; ML</span>
+    </div>
+  </main>
+  <div class="accent"></div>
+</body>
+</html>

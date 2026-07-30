@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="John Larckin — Product Designer &amp; Engineer">
+    <meta property="og:title" content="Проектирую и запускаю цифровые продукты">
+    <meta property="og:description" content="Product Designer &amp; Engineer со специализацией в Speech AI: UX/UI, full-stack разработка, AI-дубляж, ASR/TTS, voice agents и прикладной ML.">
+    <meta property="og:image" content="https://johnlarckin.com/static/img/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://johnlarckin.com/">
+
+    <link rel="canonical" href="https://johnlarckin.com/">
+    <link rel="alternate" hreflang="ru" href="https://johnlarckin.com/">
+    <link rel="alternate" hreflang="en" href="https://johnlarckin.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://johnlarckin.com/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Проектирую и запускаю цифровые продукты">
+    <meta name="twitter:description" content="UX/UI, full-stack разработка, AI-дубляж, ASR/TTS, voice agents и прикладной ML — от идеи до production.">
+    <meta name="twitter:image" content="https://johnlarckin.com/static/img/preview.png">
+    <meta name="description" content="John Larckin — Product Designer &amp; Engineer: UX/UI, full-stack разработка, Speech AI, AI-дубляж, ASR/TTS, voice agents и прикладной ML.">
+
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/grid.css">
+    <link rel="stylesheet" href="/static/css/card.css">
+    <link rel="stylesheet" href="/static/css/container.css">
+    <link rel="stylesheet" href="/static/css/hero.css">
+    <link rel="stylesheet" href="/static/css/side.css">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/faq.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/ui.css">
+    <link rel="icon" href="/static/img/jl.svg" type="image/svg+xml">
+
+    <title>John Larckin — Product Designer &amp; Engineer</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5LXL8R4MPF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5LXL8R4MPF');
+    </script>
+
+    <script>
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(100975624, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true,
+             webvisor:true,
+             defer: true
+        });
+    </script>
+    <style>
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-stopping iframe { pointer-events: none; }
+
+        /* --- Стили для ПОСЛЕДОВАТЕЛЬНОЙ анимации КАЖДОГО элемента --- */
+        .animate-sequential-item {
+            opacity: 1;
+            transform: none;
+        }
+        .js .animate-sequential-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Плавный переход */
+            will-change: opacity, transform;
+        }
+        .js .animate-sequential-item.is-visible {
+            opacity: 1; /* Становится видимым */
+            transform: translateY(0); /* Возвращается на место */
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .js .animate-sequential-item {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+        /* --- Конец стилей анимации --- */
+
+        /* Стиль для активной ссылки в меню */
+        header.web nav a.link.active {
+            opacity: 1 !important;
+            color: var(--green) !important;
+        }
+        header.web nav a.link.active .nav-link-bar {
+            height: 1em;
+        }
+        /* Стили палочки */
+        header.web nav a.link { display: flex; align-items: center; position: relative; transition: opacity 0.3s ease, color 0.3s ease; }
+        .nav-link-bar { display: inline-block; width: 2px; height: 0; background-color: var(--green); margin-right: 8px; transition: height 0.4s ease-out; will-change: height; }
+        header.web nav a.link:hover .nav-link-bar { height: 1em; }
+        header.web nav a.link:hover { opacity: 1; color: var(--green); }
+        header.web nav a.link.opc:not(.opc--50) { opacity: 1; }
+        .nav-link-text { display: inline-block; }
+
+        /* Стили для переключателя языков */
+        .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); padding: 5px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .language-switcher a { text-decoration: none; padding: 5px 8px; color: #ccc; font-weight: bold; text-transform: uppercase; font-size: var(--xs); transition: color 0.2s ease; }
+        .language-switcher a:hover { color: #fff; }
+        .language-switcher a.active { color: #FFFFFF; pointer-events: none; cursor: default; }
+    </style>
+
+</head>
+
+<body>
+
+    <noscript><div><img src="https://mc.yandex.ru/watch/100975624" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <nav class="language-switcher" aria-label="Language">
+        <a href="/" lang="ru" class="active" aria-current="page">RU</a>
+        <a href="/en/" lang="en">EN</a>
+    </nav>
+
+
+
+
+    <div class="base">
+
+        <div class="aside--base">
+             <!-- Хедер НЕ ДОЛЖЕН БЫТЬ sequential-container, если он виден сразу -->
+            <!-- Desktop Header -->
+<header class="web">
+
+    <div class="col gp gp--hg">
+
+        <!-- Верхняя часть: Лого и Заголовок -->
+        <div class="col gp gp--lg">
+            <a class="logo" href="/" aria-label="John Larckin — на главную"></a>
+            <p class="title fs__lg">Продукт. Код. <span class="underline green">Запуск.</span></p>
+        </div>
+
+        <!-- Средняя часть: Навигация и Кнопки -->
+        <div class="col gp gp--lg">
+            <!-- Навигационные ссылки -->
+            <nav class="col gp gp--xs">
+                <a class="link opc opc--50 anmt" href="#services">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Возможности</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#principles">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Как работаю</span>
+                </a>
+                <a class="link opc anmt" href="#cases">
+                    <span class="nav-link-bar"></span><span class="nav-link-text"><span class="green">Кейсы</span></span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#design-system">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Система</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#approach">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Процесс</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#development-principles">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Разработка</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#industries">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Типы продуктов</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#expertise">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Опыт</span>
+                </a>
+                <a class="link opc opc--50 anmt" href="#standards">
+                    <span class="nav-link-bar"></span><span class="nav-link-text">Передача</span>
+                </a>
+                <a class="link opc anmt" href="#faq">
+                    <span class="nav-link-bar"></span><span class="nav-link-text"><span class="green">Связаться</span></span>
+                </a>
+            </nav>
+
+            <!-- Кнопки -->
+            <div class="col gp gp--xs">
+                <a href="https://t.me/johnlarckin" class="btn btn--blue">Обсудить проект</a>
+                <a href="#cases" class="btn btn--blk">Смотреть кейсы</a>
+            </div>
+        </div>
+
+        <!-- Нижняя часть: Копирайт -->
+        <div class="copyright">
+            <div class="col gp gp--md mg mg__lg--btm">
+                <div class="col gp gp--xs">
+                    <span class="title fs__xs fw__md opc opc--75">©2026 John Larckin.</span>
+                    <small class="opc opc--25">Проектирую, собираю и запускаю цифровые продукты. Ташкент, UTC+5. Работаю удалённо.</small>
+                </div>
+                <div class="col gp gp--xs">
+                    <div class="row gp gp--xs github">
+                        <img class="img--header" src="/static/img/soc6.svg" alt="GitHub icon">
+                        <a href="https://github.com/johnlarckin/johnlarckin" class="title fs__xs fw__md opc opc--75">Open GitHub</a>
+                    </div>
+                    <span class="subtitle fs__xs fw__md opc opc--75">Обновлено 31.07.2026</span>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- Конец основного контейнера боковой панели -->
+
+</header>
+
+<!-- Mobile Header -->
+<header class="mobile">
+    <div class="row gp gp--hg center">
+        <a class="logo" href="/" aria-label="John Larckin — на главную"></a>
+        <p class="title fs__lg">Продукт. Код. <span class="underline green">Запуск.</span></p>
+    </div>
+
+
+</header>
+        </div>
+
+        <div class="bside--base gp gp--xs">
+
+
+    <main class="gp gp--xs">
+
+        <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="services">
+
+                <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container"> <!-- Hero тоже может быть контейнером -->
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                                <!-- Элемент для последовательной анимации -->
+                                <h1 class="title fs__xxl fw__bd animate-sequential-item">Создаю цифровые продукты целиком. <span class="underline green">От идеи — до работающего кода.</span></h1>
+                                <!-- Элемент для последовательной анимации -->
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Соединяю продуктовый дизайн и инженерную реализацию: UX/UI, frontend, backend и production. Отдельная специализация — Speech AI, мультиязычный дубляж и анализ разговоров.</p>
+                            </div>
+                        </div>
+
+                        <div class="bside bside--hero">
+                             <!-- Элемент для последовательной анимации -->
+                            <div class="icon animate-sequential-item"><img src="/static/img/15_years.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                </div>
+
+                <div class="grid">
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card gp gp--lg sequential-container"> <!-- Карточка тоже контейнер -->
+
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <!-- Элемент для последовательной анимации -->
+                                <h2 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Продукт и <span class="underline green">UX.</span></h2>
+                                 <!-- Элемент для последовательной анимации -->
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Разбираю задачу, пользовательские сценарии и ограничения. Превращаю требования в понятную архитектуру и проверяемый прототип.</p>
+                            </div>
+                        </div>
+
+                        <div class="bside--card">
+                             <!-- Элемент для последовательной анимации -->
+                            <div class="icon animate-sequential-item"><img src="/static/img/saas.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card gp gp--lg sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h2 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Full-stack <span class="underline green">разработка.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Собираю адаптивный frontend, API и бизнес-логику, подключаю внешние сервисы, обработку данных и файлов, готовлю продукт к релизу.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/ios.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card gp gp--lg sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h2 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Speech AI и <span class="underline green">дубляж.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Строю мультиязычные цепочки ASR → перевод → TTS: сегментацию речи, спикеров, тайминги, генерацию голоса, обработку звука и контроль результата.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/bluetooth.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h2 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Call intelligence и <span class="underline green">ML.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Превращаю записи разговоров в расшифровки и структурированные сигналы для рабочих процессов; применяю ML там, где есть данные и проверяемый критерий качества.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/info.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+        <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="principles">
+
+                <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                                <h2 class="title fs__xxl fw__bd animate-sequential-item">Беру ответственность <span class="underline green">за результат, а не только за свой слой.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Сначала уточняю цель и риски, затем показываю прогресс, проверяю решения и довожу их до рабочего состояния.</p>
+                            </div>
+                        </div>
+
+                        <div class="bside bside--hero">
+                            <div class="icon animate-sequential-item"><img src="/static/img/pro.svg" alt="" aria-hidden="true"></div>
+                        </div>
+
+                </div>
+                <div class="grid">
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Сначала задача, <span class="underline green">потом инструмент.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Выбираю подход под цель продукта, ограничения команды и стоимость дальнейшей поддержки.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/mistakes.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Работаю <span class="underline green">короткими итерациями.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Показываю промежуточный результат, собираю обратную связь и корректирую направление до дорогой реализации.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/comments.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Аргументы <span class="underline green">вместо вкусовщины.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Объясняю решения через сценарии, данные, технические ограничения и ожидаемый эффект.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/bullshit.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Говорю о рисках <span class="underline green">прямо.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Не скрываю ошибки и неопределённость. Если нужна дополнительная экспертиза, обозначаю это заранее.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/bla.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+        <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="cases">
+
+             <!-- Элемент для последовательной анимации -->
+            <div class="hero sequential-container">
+
+                    <div class="aside aside--hero pd pd__hg">
+                        <div class="col gp gp--xs">
+                            <h2 class="title fs__xxl fw__bd animate-sequential-item">Продукты и <span class="underline green">инженерные контуры.</span></h2>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Два сквозных инженерных продукта и два открытых интерфейсных кейса. Показываю не только экран, но и систему за ним: сервисы, AI-пайплайн, контроль качества и путь до рабочего результата.</p>
+                        </div>
+                    </div>
+
+                    <div class="bside">
+
+                    </div>
+
+            </div>
+            <div class="grid case-grid">
+                <!-- Элемент для последовательной анимации -->
+                <article class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <p class="subtitle fs__xs fw__md opc opc--50 animate-sequential-item">Активная разработка · закрытый репозиторий</p>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Dubbit — мультиязычный AI-дубляж.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">End-to-end система для видео: WhisperX распознаёт и размечает речь, перевод сохраняет контекст, TTS создаёт голосовые варианты, а пайплайн проверяет тайминги, обрабатывает звук и собирает финальное видео.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/case-dubbit.svg" alt="Схема пайплайна Dubbit: ASR, перевод, TTS и финальная сборка" loading="lazy" decoding="async"></div>
+                    </div>
+                </article>
+
+                <!-- Элемент для последовательной анимации -->
+                <article class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <p class="subtitle fs__xs fw__md opc opc--50 animate-sequential-item">Рабочая система · закрытый репозиторий</p>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">CallPro — операции, телефония и ML.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Платформа объединяет web, backend, mobile, роли, кампании, IVR и AI dialer. Отдельные контуры анализируют звонки и эмоции; экспериментальные CatBoost-модули оценивают promise, recovery и подходящее время звонка.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/case-callpro.svg" alt="Схема CallPro: web, backend, mobile, телефония и ML-сервисы" loading="lazy" decoding="async"></div>
+                    </div>
+                </article>
+
+                <!-- Элемент для последовательной анимации -->
+                <a href="https://www.figma.com/design/Wxq7lPZAYENXSmqTzWZANe/Safa-App---Behance---Website?node-id=359-5717&t=N6pWTBXQaxeRRw7G-1" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <p class="subtitle fs__xs fw__md opc opc--50 animate-sequential-item">Открытый интерфейсный кейс · Figma</p>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">SAFA — знакомства с учётом ценностей.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Концепция мобильного продукта: анкета, поиск, совпадения и коммуникация между пользователями.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/safa.png" alt="Интерфейс мобильного продукта SAFA" loading="lazy" decoding="async"></div>
+                    </div>
+                </a>
+
+                <!-- Элемент для последовательной анимации -->
+                <a href="https://www.figma.com/design/9mCaWmgM7hZ4N8klaCaLZl/Imkon-Savdo-Quad----Behance---Website?m=auto&t=sz8IsoG4icwq96rF-1" class="case sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <p class="subtitle fs__xs fw__md opc opc--50 animate-sequential-item">Открытый интерфейсный кейс · Figma</p>
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Imkon Savdo — магазин электроники.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Навигация по большому каталогу, сравнение товаров, выбор и сценарий покупки.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/18shots_so.png" alt="Интерфейс магазина электроники Imkon Savdo" loading="lazy" decoding="async"></div>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="design-system">
+
+            <!-- Элемент для последовательной анимации -->
+            <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                            <h2 class="title fs__xxl fw__bd animate-sequential-item">Система, которая живёт <span class="underline green">и в Figma, и в коде.</span></h2>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Связываю токены, компоненты и правила реализации, чтобы интерфейс оставался единым и масштабировался без ручной пересборки.</p>
+                            </div>
+                    </div>
+
+                    <div class="bside bside--hero">
+                        <div class="icon animate-sequential-item"><img src="/static/img/designsystem.svg" alt="" aria-hidden="true"></div>
+                    </div>
+
+            </div>
+            <div class="grid">
+                 <!-- Элемент для последовательной анимации -->
+                <div class="card sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Токены.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Цвет, типографика, отступы, радиусы и состояния собираются в одну основу для дизайна и разработки.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/1.svg" alt="" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+                <!-- Элемент для последовательной анимации -->
+                <div class="card sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Компоненты.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Проектирую переиспользуемые блоки с понятными вариантами, поведением и ограничениями.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/2.svg" alt="" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="card sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Контракт дизайн–код.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Синхронизирую названия, свойства, состояния и крайние случаи между макетом и реализацией.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/3.svg" alt="" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="card sequential-container">
+                    <div class="aside--card pd pd__xl">
+                        <div class="col gp gp--sm">
+                            <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Документация.</h3>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Фиксирую правила, примеры и решения, чтобы систему могла развивать вся команда.</p>
+                        </div>
+                    </div>
+                    <div class="bside--card">
+                        <div class="icon animate-sequential-item"><img src="/static/img/4.svg" alt="" aria-hidden="true"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+         <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="approach">
+
+                <!-- Элемент для последовательной анимации -->
+                 <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col   gp gp--xs">
+                            <h2 class="title fs__xxl fw__bd animate-sequential-item">Проектирую с учётом <span class="underline green">реальной разработки.</span></h2>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Не передаю набор статичных макетов: продумываю адаптивность, состояния, данные, ошибки и ограничения платформы до начала сборки.</p>
+                        </div>
+                        </div>
+
+                        <div class="bside">
+
+                        </div>
+
+                </div>
+                <div class="grid">
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Адаптивность.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Интерфейс сохраняет иерархию и удобство на телефоне, планшете и большом экране.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/px.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Все <span class="underline green">состояния.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Прорабатываю загрузку, пустые данные, ошибки, успех, ограничения и действия пользователя.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/status.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Реальные данные.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Проверяю интерфейс на длинных значениях, разных ролях и ответах API, а не только на идеальном контенте.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/guidelines.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Реализация <span class="underline green">в коде.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Могу сам собрать интерфейс и проверить проектное решение в рабочей среде.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/code.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+         <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="development-principles">
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                                <h2 class="title fs__xxl fw__bd animate-sequential-item">Строю продукт <span class="underline green">как систему.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Разделяю интерфейс, бизнес-логику и интеграции, чтобы продукт можно было поддерживать, проверять и развивать.</p>
+                            </div>
+                    </div>
+
+                    <div class="bside">
+
+                    </div>
+                </div>
+                <div class="grid">
+                    <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Архитектура.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Разбиваю систему на модули с понятными обязанностями, границами и связями.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/5.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                    <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Данные и API.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Продумываю контракты, валидацию, ошибки и передачу данных между частями продукта.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/6.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Качество.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Проверяю ключевые сценарии, крайние случаи и регрессии до релиза.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/7.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Поддерживаемость.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Оставляю читаемый код, конфигурацию, документацию и понятную структуру проекта.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/8.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+         <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="industries">
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col  gp gp--xs">
+                                <h2 class="title fs__xxl fw__bd animate-sequential-item">Полезен там, где нужно связать <span class="underline green">людей, данные и процессы.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Лучше всего работаю со сложными продуктами и задачами, где интерфейс невозможно отделить от логики системы.</p>
+                            </div>
+                        </div>
+
+                        <div class="bside bside--hero">
+                            <div class="icon animate-sequential-item"><img src="/static/img/23.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                </div>
+
+                <div class="grid">
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">SaaS и <span class="underline green">B2B-платформы.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Кабинеты, роли, права доступа, таблицы, отчёты и сложные пользовательские сценарии.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/11.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Операционные <span class="underline green">платформы.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">CRM- и ERP-контуры, где роли, телефония, документы, данные и выездная работа должны подчиняться единым правилам.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/12.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Стартапы и <span class="underline green">MVP.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Помогаю превратить идею в ограниченный первый релиз, который можно показать и проверить.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/13.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Речь и <span class="underline green">медиапайплайны.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Системы, которые превращают аудио и видео в готовый результат: распознают, переводят, озвучивают, синхронизируют и собирают.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/14.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+         <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="expertise">
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container">
+
+                        <div class="aside aside--hero pd pd__hg">
+                            <div class="col gp gp--xs">
+                                <h2 class="title fs__xxl fw__bd animate-sequential-item">Могу закрыть весь контур <span class="underline green">или усилить отдельный этап.</span></h2>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">15+ лет в digital. Подключаюсь как product builder, designer-engineer или технический партнёр — в зависимости от зрелости продукта и состава команды.</p>
+                            </div>
+                        </div>
+
+                        <div class="bside bside--hero">
+                            <div class="icon animate-sequential-item"><img src="/static/img/27.svg" alt="" aria-hidden="true"></div>
+                        </div>
+
+                </div>
+                <div class="grid">
+                    <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Запуск <span class="underline green">с нуля.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Помогаю определить объём первой версии, спроектировать её, реализовать и подготовить к запуску.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/15.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Развитие <span class="underline green">продукта.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Добавляю функции и перерабатываю сценарии с учётом существующей архитектуры.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/16.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Аудит и <span class="underline green">исправление.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Нахожу UX- и технические проблемы, расставляю приоритеты и могу реализовать согласованные изменения.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/17.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Усиление <span class="underline green">команды.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Беру на себя зону между продуктом, дизайном и разработкой, где обычно теряется контекст.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/18.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+         <!-- Контейнер для последовательной анимации -->
+        <section class="container gp gp--xs sequential-container" id="standards">
+
+                 <!-- Элемент для последовательной анимации -->
+                <div class="hero sequential-container">
+
+                    <div class="aside aside--hero pd pd__hg">
+                        <div class="col  gp gp--xs">
+                            <h2 class="title fs__xxl fw__bd animate-sequential-item">Довожу до production — <span class="underline green">и оставляю понятную систему после себя.</span></h2>
+                            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Релиз для меня — не просто загрузка файлов, а рабочая среда, проверка ключевых сценариев и понятный способ поддерживать продукт дальше.</p>
+                        </div>
+                    </div>
+
+                    <div class="bside bside--hero">
+                        <div class="icon animate-sequential-item"><img src="/static/img/29.svg" alt="" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="grid">
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Требования и решения.</h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Фиксирую сценарии, критерии готовности, состояния интерфейса и важные технические договорённости.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/21.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Деплой и <span class="underline green">инфраструктура.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Настраиваю окружение, домен, DNS, SSL и публикацию приложения.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/22.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                     <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Проверка <span class="underline green">релиза.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Проверяю основные пути пользователя, адаптивность, интеграции и ошибки после публикации.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/19.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                    <!-- Элемент для последовательной анимации -->
+                    <div class="card sequential-container">
+                        <div class="aside--card pd pd__xl">
+                            <div class="col gp gp--sm">
+                                <h3 class="title fs__lg fw__md opc opc--75 animate-sequential-item">Передача и <span class="underline green">развитие.</span></h3>
+                                <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Оставляю структуру репозитория, инструкции по запуску и обновлению, а также понятный список следующих задач.</p>
+                            </div>
+                        </div>
+                        <div class="bside--card">
+                            <div class="icon animate-sequential-item"><img src="/static/img/20.svg" alt="" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </section>
+
+    </main>
+
+
+
+             <!-- ЭТОТ блок - контейнер-триггер для FAQ -->
+            <section class="faq pd pd__hg gp gp--xxl sequential-container" id="faq">
+                <div class="aside aside--faq">
+    <div class="col gp gp--lg">
+        <div class="col gp gp--xs">
+            <h2 class="title fs__xxl fw__bd animate-sequential-item">Можно сразу к делу.</h2>
+            <p class="subtitle fs__md fw__md opc opc--75 animate-sequential-item">Коротко о формате работы, стеке и зонах ответственности.</p>
+        </div>
+        <div class="row animate-sequential-item">
+            <a href="https://t.me/johnlarckin" class="btn btn--blue">Обсудить задачу</a>
+        </div>
+    </div>
+</div>
+<div class="bside bside--faq">
+    <div class="col gp gp--lg">
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-1" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Кто ты по роли?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-1" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Product Designer &amp; Engineer со специализацией в Speech AI. Соединяю продуктовую логику, UX/UI и реализацию и могу вести задачу от требований до рабочего релиза.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-2" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Можешь сделать продукт целиком?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-2" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Да, если объём разумно закрывается одним специалистом. Для больших систем заранее разделяю зоны ответственности и подключаю нужную экспертизу.</div>
+            </div>
+        </div>
+
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-4" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Что именно можешь взять на себя?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-4" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Анализ задачи, сценарии, прототип, интерфейс, frontend, backend, интеграции, обработку данных, Speech AI-пайплайн, деплой и документацию.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-5" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Какие инструменты и технологии используешь?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-5" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Для продуктовых приложений использую React или Vue, NestJS или FastAPI, Flutter и SQL. Для voice/ML-задач — WhisperX, Qwen3-TTS, Inworld TTS, ElevenLabs, FFmpeg, Demucs, Modal и CatBoost. Для фоновой обработки — Redis, Celery или BullMQ.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-6" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Работаешь с существующей командой и кодовой базой?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-6" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Да. Сначала разбираюсь в текущих ограничениях и договорённостях, затем предлагаю изменения, которые команда сможет поддерживать.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-7" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Что входит в твою работу со Speech AI?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-7" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Распознавание речи, VAD и спикеры, перевод, TTS и voice cloning при подтверждённых правах, alignment, контроль таймингов, обработка звука и анализ разговоров. Вывод моделей проходит проверки, а спорные места остаются видимыми для человека.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-8" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Какие форматы сотрудничества рассматриваешь?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-8" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Проектную работу, длительное сотрудничество и роль внутри продуктовой команды.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-9" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Есть опыт управления?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-9" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Да. Руководил и координировал дизайнеров, frontend- и backend-разработчиков, при этом оставался включён в практическую работу.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-10" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Где ты находишься?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-10" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">В Ташкенте, Узбекистан, UTC+5. Работаю удалённо, время пересечения согласовываем под команду.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-11" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Как начинается работа?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-11" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Обсуждаем контекст, ожидаемый результат и ограничения. После этого я предлагаю объём первой итерации, план и критерии готовности.</div>
+            </div>
+        </div>
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-12" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Где посмотреть дизайн и инженерную работу?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-12" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Интерфейсные кейсы открыты в Figma, Behance и Dribbble. Dubbit и CallPro находятся в закрытых репозиториях; могу показать архитектуру, интерфейсы и обезличенные фрагменты без раскрытия данных и секретов.</div>
+            </div>
+        </div>
+
+        <div class="faq-item animate-sequential-item">
+            <div class="faq-question" role="button" aria-expanded="false" aria-controls="faq-answer-14" tabindex="0">
+                <div class="title fs__md fw__md opc opc--75">Когда можешь начать и сколько это стоит?</div>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer" id="faq-answer-14" role="region">
+                <div class="subtitle fs__md fw__md opc opc--75">Срок старта, оценку и формат называю после короткого обсуждения задачи — без обещаний до понимания объёма.</div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Скрипт для работы аккордеона FAQ (остается без изменений) -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqQuestions = document.querySelectorAll('#faq .faq-question');
+        if (!faqQuestions.length) return;
+
+        faqQuestions.forEach(question => {
+            const faqItem = question.closest('.faq-item');
+            if (!faqItem) return;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = question.querySelector('.faq-icon');
+            if (!answer || !icon) return;
+
+            if (question.getAttribute('aria-expanded') === 'false') {
+                 answer.style.maxHeight = '0px';
+                 answer.style.overflow = 'hidden';
+                 answer.style.transition = 'max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out';
+            } else {
+                 answer.style.maxHeight = answer.scrollHeight + 'px';
+                 answer.style.overflow = 'visible';
+                 answer.style.transition = 'max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out';
+                 icon.textContent = '−';
+                 faqItem.classList.add('active');
+            }
+
+            question.addEventListener('click', () => {
+                toggleItem(faqItem, question, answer, icon);
+            });
+
+            question.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleItem(faqItem, question, answer, icon);
+                }
+            });
+        });
+
+        function toggleItem(faqItem, question, answer, icon) {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+                question.setAttribute('aria-expanded', 'false');
+                answer.style.maxHeight = '0px';
+                answer.style.overflow = 'hidden';
+                icon.textContent = '+';
+                faqItem.classList.remove('active');
+            } else {
+                question.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.overflow = 'visible';
+                icon.textContent = '−';
+                faqItem.classList.add('active');
+                 setTimeout(() => {
+                     if (question.getAttribute('aria-expanded') === 'true') {
+                         answer.style.maxHeight = answer.scrollHeight + 'px';
+                     }
+                 }, 310);
+            }
+        }
+    });
+</script>
+
+            </section>
+
+             <!-- ЭТОТ блок - контейнер-триггер для Footer -->
+            <footer class="gp gp--xxl sequential-container">
+                <div class="aside aside--footer">
+    <div class="col gp gp--xxl">
+        <a href="mailto:johnlarckin@gmail.com" class="title fs__xl animate-sequential-item">Есть продукт, процесс или сложная идея? Давайте обсудим.</a>
+        <div class="row gp gp--xs mobile animate-sequential-item">
+            <a href="https://t.me/johnlarckin" class="btn btn--blue">Обсудить задачу</a>
+            <a href="https://github.com/johnlarckin" class="btn btn--blk">Смотреть GitHub</a>
+        </div>
+        <div class="col gp gp--md">
+            <span class="title fs__md animate-sequential-item">Работы и исходный код</span>
+            <div class="row animate-sequential-item">
+                <a href="https://github.com/johnlarckin" class="link opc opc--50 anmt" aria-label="GitHub"><img class="img--header" src="/static/img/soc6.svg" alt="GitHub"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bside bside--footer gp gp--xxl">
+        <div class="col gp gp--xxl">
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Услуги</span>
+                <div class="col gp gp--xs">
+                    <a href="#services" class="link opc opc--50 anmt animate-sequential-item">Продукт и UX</a>
+                    <a href="#services" class="link opc opc--50 anmt animate-sequential-item">Full-stack разработка</a>
+                    <a href="#services" class="link opc opc--50 anmt animate-sequential-item">Speech AI и дубляж</a>
+                    <a href="#services" class="link opc opc--50 anmt animate-sequential-item">Call intelligence и ML</a>
+                </div>
+            </div>
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Код</span>
+                <div class="col gp gp--xs">
+                    <a href="https://github.com/johnlarckin" class="link opc opc--50 anmt animate-sequential-item">GitHub</a>
+                    <a href="https://github.com/johnlarckin/johnlarckin" class="link opc opc--50 anmt animate-sequential-item">Исходный код сайта</a>
+                </div>
+            </div>
+        </div>
+         <div class="col gp gp--xxl">
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Контакт</span>
+                <div class="col gp gp--xs">
+                    <a href="https://t.me/johnlarckin" class="link opc opc--50 anmt animate-sequential-item">Обсудить проект</a>
+                    <a href="mailto:johnlarckin@gmail.com" class="link opc opc--50 anmt animate-sequential-item">Написать на почту</a>
+                </div>
+            </div>
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Обо мне</span>
+                <div class="col gp gp--xs">
+                    <a href="https://www.behance.net/johnlarckin" class="link opc opc--50 anmt animate-sequential-item">Behance</a>
+                    <a href="https://dribbble.com/johnlarckin" class="link opc opc--50 anmt animate-sequential-item">Dribbble</a>
+                    <a href="https://youtube.com/@johnlarckin1209" class="link opc opc--50 anmt animate-sequential-item">YouTube</a>
+                </div>
+            </div>
+        </div>
+         <div class="col gp gp--xxl">
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Типы продуктов</span>
+                <div class="col gp gp--xs">
+                    <a href="#industries" class="link opc opc--50 anmt animate-sequential-item">SaaS и B2B</a>
+                    <a href="#industries" class="link opc opc--50 anmt animate-sequential-item">Операционные платформы</a>
+                    <a href="#industries" class="link opc opc--50 anmt animate-sequential-item">Стартапы и MVP</a>
+                    <a href="#industries" class="link opc opc--50 anmt animate-sequential-item">Речь и медиапайплайны</a>
+                </div>
+            </div>
+        </div>
+        <div class="col gp gp--xxl">
+            <div class="col gp gp--md">
+                <span class="title fs__md animate-sequential-item">Формат</span>
+                <div class="col gp gp--xs">
+                    <a href="#expertise" class="link opc opc--50 anmt animate-sequential-item">Проектная работа</a>
+                    <a href="#expertise" class="link opc opc--50 anmt animate-sequential-item">Длительное сотрудничество</a>
+                    <a href="#faq" class="link opc opc--50 anmt animate-sequential-item">Работа по NDA</a>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="col gp gp--xs mobile">
+    <span class="title fs__xs fw__md opc opc--75 animate-sequential-item">©2026 John Larckin.</span>
+    <small class="opc opc--25 animate-sequential-item">Проектирую, собираю и запускаю цифровые продукты. Ташкент, UTC+5. Работаю удалённо.</small>
+</div>
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script>
+        let lenis;
+        if (typeof Lenis !== 'undefined') {
+             // --- ИЗМЕНЕНИЕ ЗДЕСЬ: Добавляем опции для тач-устройств ---
+             lenis = new Lenis({
+                 smoothTouch: true, // <--- Добавлено
+                 touchMultiplier: 1.5 // <--- Добавлено (можно настроить или убрать)
+             });
+             // -------------------------------------------------------
+             function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+             requestAnimationFrame(raf);
+        } else {
+             console.error("Lenis library not loaded.");
+        }
+
+        // --- Последовательная анимация элементов ВНУТРИ контейнера ---
+        function initSequentialAnimation() {
+            if (!('IntersectionObserver' in window)) {
+                document.querySelectorAll('.animate-sequential-item').forEach(item => item.classList.add('is-visible'));
+                return;
+            }
+            const containers = document.querySelectorAll('.sequential-container'); // Ищем триггеры
+            const itemStaggerDelay = 80; // мс задержка между элементами
+
+            if (!containers.length) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Запускаем когда 10% контейнера видно
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const containerElement = entry.target;
+                        // Ищем элементы для анимации ВНУТРИ сработавшего триггера
+                        const itemsToAnimate = containerElement.querySelectorAll('.animate-sequential-item');
+
+                        if (itemsToAnimate.length > 0) {
+                            itemsToAnimate.forEach((item, index) => {
+                                const delay = index * itemStaggerDelay;
+                                setTimeout(() => {
+                                    item.classList.add('is-visible');
+                                }, delay);
+                            });
+                        }
+                        observer.unobserve(containerElement); // Отписываемся после первого срабатывания
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            containers.forEach(container => observer.observe(container));
+        }
+
+        // --- Навигация ---
+        function initNavigation() {
+             // 1. Smooth Scroll
+             document.querySelectorAll('header.web a[href^="#"]').forEach(anchor => {
+                 anchor.addEventListener('click', function (e) {
+                     e.preventDefault();
+                     const targetId = this.getAttribute('href');
+                     if (targetId && targetId.length > 1) {
+                         const targetElement = document.querySelector(targetId);
+                         if (targetElement && typeof lenis !== 'undefined') {
+                             lenis.scrollTo(targetElement, { duration: 1.2 });
+                         } else if (targetElement) {
+                             targetElement.scrollIntoView({ behavior: 'smooth' });
+                         } else {
+                             console.warn("Target element not found for anchor:", targetId);
+                         }
+                     }
+                 });
+             });
+
+            // 2. Active Nav Link Highlighting
+            const navLinks = document.querySelectorAll('header.web nav a.link[href^="#"]');
+            // Ищем секции во всем документе, а не только в main/footer
+            const sections = document.querySelectorAll('section[id]');
+            const sectionMap = new Map();
+
+             if (!navLinks.length || !sections.length) return;
+
+             sections.forEach(section => {
+                 // Убедимся, что ID секции не пустой
+                 if (section.id) {
+                    const correspondingLink = document.querySelector(`header.web a.link[href="#${section.id}"]`);
+                    if (correspondingLink) {
+                        sectionMap.set(section, correspondingLink);
+                    }
+                 }
+             });
+             // Проверяем, что хоть что-то добавилось в Map
+             if (sectionMap.size === 0) {
+                console.warn("No sections with corresponding nav links found for highlighting.");
+                return;
+             }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-40% 0px -60% 0px',
+                threshold: 0
+            };
+
+             const activateLink = (linkToActivate) => {
+                 navLinks.forEach(link => link.classList.remove('active'));
+                 if (linkToActivate) {
+                     linkToActivate.classList.add('active');
+                 }
+             };
+
+            const observerCallback = (entries) => {
+                let activeSectionFound = false;
+                 entries.reverse().forEach(entry => {
+                     if (!activeSectionFound && entry.isIntersecting) {
+                         const link = sectionMap.get(entry.target);
+                         if (link) {
+                             activateLink(link);
+                             activeSectionFound = true;
+                         }
+                     }
+                 });
+                 if (!activeSectionFound) {
+                    // Если ни одна секция не активна в данный момент,
+                    // попробуем найти последнюю секцию, которая была пересечена сверху
+                    // (Это более сложная логика, пока оставим просто сброс)
+                    activateLink(null);
+                 }
+            };
+
+            const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
+            sectionMap.forEach((link, section) => scrollObserver.observe(section));
+        }
+
+        // --- Запуск скриптов ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof Lenis !== 'undefined') {
+                 initNavigation();
+            } else {
+                 console.warn("Initializing navigation without Lenis for anchors.");
+                 initNavigation();
+            }
+            initSequentialAnimation(); // Запускаем последовательную анимацию
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">CallPro product architecture</title>
+  <desc id="desc">Abstract diagram connecting a web application, backend, mobile application, telephony, AI dialer, and machine learning services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121119"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f43ff"/>
+      <stop offset="1" stop-color="#ff124a"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <circle cx="480" cy="280" r="214" fill="#6f43ff" opacity=".055"/>
+
+  <text x="54" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="2">CALLPRO</text>
+  <text x="54" y="105" fill="#fff" fill-opacity=".52" font-family="Arial, sans-serif" font-size="15" letter-spacing="2">OPERATIONS · TELEPHONY · APPLIED ML</text>
+
+  <g stroke="#fff" stroke-opacity=".2" stroke-width="2">
+    <path d="M480 270 214 190"/>
+    <path d="M480 270 746 190"/>
+    <path d="M480 270 184 376"/>
+    <path d="M480 270 776 376"/>
+    <path d="M480 270V438"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(480 270)">
+      <rect x="-92" y="-64" width="184" height="128" rx="34" fill="url(#core)"/>
+      <text y="-3" fill="#fff" font-size="30" font-weight="700" letter-spacing="2">CALLPRO</text>
+      <text y="28" fill="#fff" fill-opacity=".7" font-size="13" letter-spacing="2">PRODUCT CORE</text>
+    </g>
+
+    <g transform="translate(214 190)">
+      <rect x="-91" y="-46" width="182" height="92" rx="22" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".18"/>
+      <text y="-3" fill="#fff" font-size="17" font-weight="700" letter-spacing="1">WEB APP</text>
+      <text y="23" fill="#fff" fill-opacity=".48" font-size="13">React</text>
+    </g>
+
+    <g transform="translate(746 190)">
+      <rect x="-91" y="-46" width="182" height="92" rx="22" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".18"/>
+      <text y="-3" fill="#fff" font-size="17" font-weight="700" letter-spacing="1">BACKEND</text>
+      <text y="23" fill="#fff" fill-opacity=".48" font-size="13">NestJS · Queues</text>
+    </g>
+
+    <g transform="translate(184 376)">
+      <rect x="-91" y="-46" width="182" height="92" rx="22" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".18"/>
+      <text y="-3" fill="#fff" font-size="17" font-weight="700" letter-spacing="1">MOBILE</text>
+      <text y="23" fill="#fff" fill-opacity=".48" font-size="13">Flutter</text>
+    </g>
+
+    <g transform="translate(776 376)">
+      <rect x="-91" y="-46" width="182" height="92" rx="22" fill="#fff" fill-opacity=".045" stroke="#fff" stroke-opacity=".18"/>
+      <text y="-3" fill="#fff" font-size="17" font-weight="700" letter-spacing="1">TELEPHONY</text>
+      <text y="23" fill="#fff" fill-opacity=".48" font-size="13">IVR · AI Dialer</text>
+    </g>
+
+    <g transform="translate(480 448)">
+      <rect x="-105" y="-38" width="210" height="76" rx="22" fill="#fff" fill-opacity=".045" stroke="#ff124a" stroke-opacity=".58"/>
+      <text y="-1" fill="#fff" font-size="17" font-weight="700" letter-spacing="1">ML SCORING</text>
+      <text y="23" fill="#fff" fill-opacity=".48" font-size="13">CatBoost services</text>
+    </g>
+  </g>
+</svg>
