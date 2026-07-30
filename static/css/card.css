@@ -26,7 +26,12 @@
 
     width: 100%;
     box-sizing: border-box;
-    word-break: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
     overflow: hidden;
     justify-content: space-between;
+}
+
+.case .title {
+    hyphens: none;
 }

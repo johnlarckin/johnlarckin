@@ -4,6 +4,10 @@
   gap: var(--xs);
 }
 
+.case-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 
 
 /* Мобильные (до 576px) */
@@ -39,5 +43,4 @@
 
 /* Большие десктопы (1400px+) */
 @media (min-width: 1600px) {
-
 }
